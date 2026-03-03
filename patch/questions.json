@@ -1,0 +1,808 @@
+{
+  "Easy": [
+    {
+      "title": "Two Sum",
+      "difficulty": "Easy",
+      "desc": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>two_sum([2,7,11,15], 9)</code><br>Output: <code>[0, 1]</code><br><br><strong>Example 2:</strong><br>Input: <code>two_sum([3,2,4], 6)</code><br>Output: <code>[1, 2]</code><br><br>",
+      "template": "def two_sum(nums, target):\n    pass",
+      "validation": "assert two_sum([2,7,11,15], 9) == [0, 1]\nassert two_sum([3,2,4], 6) == [1, 2]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Palindrome Number",
+      "difficulty": "Easy",
+      "desc": "Given an integer x, return true if x is a palindrome, and false otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_palindrome(121)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_palindrome(-121)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_palindrome(x):\n    pass",
+      "validation": "assert is_palindrome(121) == True\nassert is_palindrome(-121) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Reverse String",
+      "difficulty": "Easy",
+      "desc": "Write a function that reverses a string.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>reverse_string('hello')</code><br>Output: <code>'olleh'</code><br><br><strong>Example 2:</strong><br>Input: <code>reverse_string('abcd')</code><br>Output: <code>'dcba'</code><br><br>",
+      "template": "def reverse_string(s):\n    pass",
+      "validation": "assert reverse_string('hello') == 'olleh'\nassert reverse_string('abcd') == 'dcba'\nprint(\"Passed\")"
+    },
+    {
+      "title": "Sum Array",
+      "difficulty": "Easy",
+      "desc": "Return the sum of all elements in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sum_array([1,2,3])</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>sum_array([-1, 1])</code><br>Output: <code>0</code><br><br>",
+      "template": "def sum_array(arr):\n    pass",
+      "validation": "assert sum_array([1,2,3]) == 6\nassert sum_array([-1, 1]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Find Maximum",
+      "difficulty": "Easy",
+      "desc": "Return the largest number in the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_max([1,5,3])</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>find_max([-10,-5])</code><br>Output: <code>-5</code><br><br>",
+      "template": "def find_max(arr):\n    pass",
+      "validation": "assert find_max([1,5,3]) == 5\nassert find_max([-10,-5]) == -5\nprint(\"Passed\")"
+    },
+    {
+      "title": "Find Minimum",
+      "difficulty": "Easy",
+      "desc": "Return the smallest number in the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_min([1,5,3])</code><br>Output: <code>1</code><br><br><strong>Example 2:</strong><br>Input: <code>find_min([-10,-5])</code><br>Output: <code>-10</code><br><br>",
+      "template": "def find_min(arr):\n    pass",
+      "validation": "assert find_min([1,5,3]) == 1\nassert find_min([-10,-5]) == -10\nprint(\"Passed\")"
+    },
+    {
+      "title": "Count Vowels",
+      "difficulty": "Easy",
+      "desc": "Count the number of vowels (a,e,i,o,u) in a string.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_vowels('hello')</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_vowels('apple')</code><br>Output: <code>2</code><br><br>",
+      "template": "def count_vowels(s):\n    pass",
+      "validation": "assert count_vowels('hello') == 2\nassert count_vowels('apple') == 2\nprint(\"Passed\")"
+    },
+    {
+      "title": "Is Even",
+      "difficulty": "Easy",
+      "desc": "Return True if n is even, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_even(4)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_even(7)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_even(n):\n    pass",
+      "validation": "assert is_even(4) == True\nassert is_even(7) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Is Odd",
+      "difficulty": "Easy",
+      "desc": "Return True if n is odd, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_odd(5)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_odd(2)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_odd(n):\n    pass",
+      "validation": "assert is_odd(5) == True\nassert is_odd(2) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Factorial",
+      "difficulty": "Easy",
+      "desc": "Return the factorial of n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>factorial(5)</code><br>Output: <code>120</code><br><br><strong>Example 2:</strong><br>Input: <code>factorial(3)</code><br>Output: <code>6</code><br><br>",
+      "template": "def factorial(n):\n    pass",
+      "validation": "assert factorial(5) == 120\nassert factorial(3) == 6\nprint(\"Passed\")"
+    },
+    {
+      "title": "Fibonacci",
+      "difficulty": "Easy",
+      "desc": "Return the n-th Fibonacci number (n=0 returns 0, n=1 returns 1).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>fibonacci(5)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>fibonacci(7)</code><br>Output: <code>13</code><br><br>",
+      "template": "def fibonacci(n):\n    pass",
+      "validation": "assert fibonacci(5) == 5\nassert fibonacci(7) == 13\nprint(\"Passed\")"
+    },
+    {
+      "title": "GCD",
+      "difficulty": "Easy",
+      "desc": "Return the greatest common divisor of a and b.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>gcd(12, 8)</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>gcd(7, 3)</code><br>Output: <code>1</code><br><br>",
+      "template": "def gcd(a, b):\n    pass",
+      "validation": "assert gcd(12, 8) == 4\nassert gcd(7, 3) == 1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Check Prime",
+      "difficulty": "Easy",
+      "desc": "Return True if n is a prime number, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_prime(7)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_prime(10)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_prime(n):\n    pass",
+      "validation": "assert is_prime(7) == True\nassert is_prime(10) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Sum of Digits",
+      "difficulty": "Easy",
+      "desc": "Return the sum of the digits of a positive integer n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sum_digits(123)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>sum_digits(405)</code><br>Output: <code>9</code><br><br>",
+      "template": "def sum_digits(n):\n    pass",
+      "validation": "assert sum_digits(123) == 6\nassert sum_digits(405) == 9\nprint(\"Passed\")"
+    },
+    {
+      "title": "Reverse Digits",
+      "difficulty": "Easy",
+      "desc": "Reverse the digits of a number. (Assume positive)",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>reverse_digits(123)</code><br>Output: <code>321</code><br><br><strong>Example 2:</strong><br>Input: <code>reverse_digits(400)</code><br>Output: <code>4</code><br><br>",
+      "template": "def reverse_digits(n):\n    pass",
+      "validation": "assert reverse_digits(123) == 321\nassert reverse_digits(400) == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Count Set Bits",
+      "difficulty": "Easy",
+      "desc": "Count the number of 1s in the binary representation of n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_bits(5)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_bits(7)</code><br>Output: <code>3</code><br><br>",
+      "template": "def count_bits(n):\n    pass",
+      "validation": "assert count_bits(5) == 2\nassert count_bits(7) == 3\nprint(\"Passed\")"
+    },
+    {
+      "title": "FizzBuzz",
+      "difficulty": "Easy",
+      "desc": "Return 'Fizz' if n is divisible by 3, 'Buzz' if by 5, 'FizzBuzz' if both, else return str(n).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>fizz_buzz(15)</code><br>Output: <code>'FizzBuzz'</code><br><br><strong>Example 2:</strong><br>Input: <code>fizz_buzz(3)</code><br>Output: <code>'Fizz'</code><br><br>",
+      "template": "def fizz_buzz(n):\n    pass",
+      "validation": "assert fizz_buzz(15) == 'FizzBuzz'\nassert fizz_buzz(3) == 'Fizz'\nprint(\"Passed\")"
+    },
+    {
+      "title": "Leap Year",
+      "difficulty": "Easy",
+      "desc": "Return True if year is a leap year, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_leap(2020)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_leap(2021)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_leap(year):\n    pass",
+      "validation": "assert is_leap(2020) == True\nassert is_leap(2021) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "String Length",
+      "difficulty": "Easy",
+      "desc": "Return the length of the string without using the len() function directly (just write it, however).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>string_len('hello')</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>string_len('')</code><br>Output: <code>0</code><br><br>",
+      "template": "def string_len(s):\n    pass",
+      "validation": "assert string_len('hello') == 5\nassert string_len('') == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Count Consonants",
+      "difficulty": "Easy",
+      "desc": "Count consonants in a string (letters that are not vowels).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_consonants('hello')</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>count_consonants('world')</code><br>Output: <code>4</code><br><br>",
+      "template": "def count_consonants(s):\n    pass",
+      "validation": "assert count_consonants('hello') == 3\nassert count_consonants('world') == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Square Root",
+      "difficulty": "Easy",
+      "desc": "Return the integer part of the square root of n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>int_sqrt(9)</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>int_sqrt(15)</code><br>Output: <code>3</code><br><br>",
+      "template": "def int_sqrt(n):\n    pass",
+      "validation": "assert int_sqrt(9) == 3\nassert int_sqrt(15) == 3\nprint(\"Passed\")"
+    },
+    {
+      "title": "Power of Two",
+      "difficulty": "Easy",
+      "desc": "Return True if n is a power of two, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_power_of_two(16)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_power_of_two(14)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_power_of_two(n):\n    pass",
+      "validation": "assert is_power_of_two(16) == True\nassert is_power_of_two(14) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Remove Spaces",
+      "difficulty": "Easy",
+      "desc": "Return the string with all spaces removed.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>remove_spaces('a b c')</code><br>Output: <code>'abc'</code><br><br><strong>Example 2:</strong><br>Input: <code>remove_spaces(' x ')</code><br>Output: <code>'x'</code><br><br>",
+      "template": "def remove_spaces(s):\n    pass",
+      "validation": "assert remove_spaces('a b c') == 'abc'\nassert remove_spaces(' x ') == 'x'\nprint(\"Passed\")"
+    },
+    {
+      "title": "Anagram Check",
+      "difficulty": "Easy",
+      "desc": "Return True if s1 is an anagram of s2.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_anagram('listen', 'silent')</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_anagram('hello', 'world')</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_anagram(s1, s2):\n    pass",
+      "validation": "assert is_anagram('listen', 'silent') == True\nassert is_anagram('hello', 'world') == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Sort Array",
+      "difficulty": "Easy",
+      "desc": "Return the array sorted in ascending order.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sort_array([3,1,2])</code><br>Output: <code>[1,2,3]</code><br><br><strong>Example 2:</strong><br>Input: <code>sort_array([5,0,-1])</code><br>Output: <code>[-1,0,5]</code><br><br>",
+      "template": "def sort_array(arr):\n    pass",
+      "validation": "assert sort_array([3,1,2]) == [1,2,3]\nassert sort_array([5,0,-1]) == [-1,0,5]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Remove Element",
+      "difficulty": "Easy",
+      "desc": "Remove all occurrences of val from arr and return the new array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>remove_val([1,2,2,3], 2)</code><br>Output: <code>[1,3]</code><br><br><strong>Example 2:</strong><br>Input: <code>remove_val([5,5], 5)</code><br>Output: <code>[]</code><br><br>",
+      "template": "def remove_val(arr, val):\n    pass",
+      "validation": "assert remove_val([1,2,2,3], 2) == [1,3]\nassert remove_val([5,5], 5) == []\nprint(\"Passed\")"
+    },
+    {
+      "title": "First Element",
+      "difficulty": "Easy",
+      "desc": "Return the first element of the array. If empty, return None.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>first_element([5,2])</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>first_element([])</code><br>Output: <code>None</code><br><br>",
+      "template": "def first_element(arr):\n    pass",
+      "validation": "assert first_element([5,2]) == 5\nassert first_element([]) == None\nprint(\"Passed\")"
+    },
+    {
+      "title": "Last Element",
+      "difficulty": "Easy",
+      "desc": "Return the last element of the array. If empty, return None.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>last_element([5,2])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>last_element([])</code><br>Output: <code>None</code><br><br>",
+      "template": "def last_element(arr):\n    pass",
+      "validation": "assert last_element([5,2]) == 2\nassert last_element([]) == None\nprint(\"Passed\")"
+    },
+    {
+      "title": "Average",
+      "difficulty": "Easy",
+      "desc": "Return the average of the array of numbers. If empty, return 0.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>average([1,2,3])</code><br>Output: <code>2.0</code><br><br><strong>Example 2:</strong><br>Input: <code>average([])</code><br>Output: <code>0</code><br><br>",
+      "template": "def average(arr):\n    pass",
+      "validation": "assert average([1,2,3]) == 2.0\nassert average([]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "List Intersection",
+      "difficulty": "Easy",
+      "desc": "Return the common elements between two lists, sorted.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>intersection([1,2,3], [2,3,4])</code><br>Output: <code>[2,3]</code><br><br><strong>Example 2:</strong><br>Input: <code>intersection([1], [2])</code><br>Output: <code>[]</code><br><br>",
+      "template": "def intersection(l1, l2):\n    pass",
+      "validation": "assert intersection([1,2,3], [2,3,4]) == [2,3]\nassert intersection([1], [2]) == []\nprint(\"Passed\")"
+    },
+    {
+      "title": "List Union",
+      "difficulty": "Easy",
+      "desc": "Return all unique elements from two lists, sorted.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>union([1,2], [2,3])</code><br>Output: <code>[1,2,3]</code><br><br><strong>Example 2:</strong><br>Input: <code>union([1], [2])</code><br>Output: <code>[1,2]</code><br><br>",
+      "template": "def union(l1, l2):\n    pass",
+      "validation": "assert union([1,2], [2,3]) == [1,2,3]\nassert union([1], [2]) == [1,2]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Celsius to Fahrenheit",
+      "difficulty": "Easy",
+      "desc": "Convert Celsius temperature to Fahrenheit (F = C * 9/5 + 32).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>c_to_f(0)</code><br>Output: <code>32</code><br><br><strong>Example 2:</strong><br>Input: <code>c_to_f(100)</code><br>Output: <code>212</code><br><br>",
+      "template": "def c_to_f(c):\n    pass",
+      "validation": "assert c_to_f(0) == 32\nassert c_to_f(100) == 212\nprint(\"Passed\")"
+    },
+    {
+      "title": "Fahrenheit to Celsius",
+      "difficulty": "Easy",
+      "desc": "Convert Fahrenheit to Celsius (C = (F - 32) * 5/9).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>f_to_c(32)</code><br>Output: <code>0</code><br><br><strong>Example 2:</strong><br>Input: <code>f_to_c(212)</code><br>Output: <code>100</code><br><br>",
+      "template": "def f_to_c(f):\n    pass",
+      "validation": "assert f_to_c(32) == 0\nassert f_to_c(212) == 100\nprint(\"Passed\")"
+    },
+    {
+      "title": "Multiply Elements",
+      "difficulty": "Easy",
+      "desc": "Return the product of all elements in the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>product_array([1,2,3,4])</code><br>Output: <code>24</code><br><br><strong>Example 2:</strong><br>Input: <code>product_array([1,0,5])</code><br>Output: <code>0</code><br><br>",
+      "template": "def product_array(arr):\n    pass",
+      "validation": "assert product_array([1,2,3,4]) == 24\nassert product_array([1,0,5]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Count Occurrences",
+      "difficulty": "Easy",
+      "desc": "Return the number of times target appears in arr.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_target([1,2,2,3], 2)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_target([1,1], 3)</code><br>Output: <code>0</code><br><br>",
+      "template": "def count_target(arr, target):\n    pass",
+      "validation": "assert count_target([1,2,2,3], 2) == 2\nassert count_target([1,1], 3) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Absolute Difference",
+      "difficulty": "Easy",
+      "desc": "Return the absolute difference between a and b.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>abs_diff(5, 10)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>abs_diff(10, 5)</code><br>Output: <code>5</code><br><br>",
+      "template": "def abs_diff(a, b):\n    pass",
+      "validation": "assert abs_diff(5, 10) == 5\nassert abs_diff(10, 5) == 5\nprint(\"Passed\")"
+    },
+    {
+      "title": "Is Divisible",
+      "difficulty": "Easy",
+      "desc": "Return True if a is divisible by b, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_divisible(10, 2)</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_divisible(10, 3)</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_divisible(a, b):\n    pass",
+      "validation": "assert is_divisible(10, 2) == True\nassert is_divisible(10, 3) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "String to Int",
+      "difficulty": "Easy",
+      "desc": "Convert string to integer.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>str_to_int('123')</code><br>Output: <code>123</code><br><br><strong>Example 2:</strong><br>Input: <code>str_to_int('-5')</code><br>Output: <code>-5</code><br><br>",
+      "template": "def str_to_int(s):\n    pass",
+      "validation": "assert str_to_int('123') == 123\nassert str_to_int('-5') == -5\nprint(\"Passed\")"
+    },
+    {
+      "title": "Int to String",
+      "difficulty": "Easy",
+      "desc": "Convert integer to string.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>int_to_str(123)</code><br>Output: <code>'123'</code><br><br><strong>Example 2:</strong><br>Input: <code>int_to_str(-5)</code><br>Output: <code>'-5'</code><br><br>",
+      "template": "def int_to_str(n):\n    pass",
+      "validation": "assert int_to_str(123) == '123'\nassert int_to_str(-5) == '-5'\nprint(\"Passed\")"
+    },
+    {
+      "title": "Swap Ends",
+      "difficulty": "Easy",
+      "desc": "Swap the first and last elements of an array and return it.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>swap_ends([1,2,3])</code><br>Output: <code>[3,2,1]</code><br><br><strong>Example 2:</strong><br>Input: <code>swap_ends([1])</code><br>Output: <code>[1]</code><br><br>",
+      "template": "def swap_ends(arr):\n    pass",
+      "validation": "assert swap_ends([1,2,3]) == [3,2,1]\nassert swap_ends([1]) == [1]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Middle Element",
+      "difficulty": "Easy",
+      "desc": "Return the middle element of an array. If even length, return the right middle.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>middle([1,2,3])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>middle([1,2,3,4])</code><br>Output: <code>3</code><br><br>",
+      "template": "def middle(arr):\n    pass",
+      "validation": "assert middle([1,2,3]) == 2\nassert middle([1,2,3,4]) == 3\nprint(\"Passed\")"
+    },
+    {
+      "title": "All Unique",
+      "difficulty": "Easy",
+      "desc": "Return True if all elements in the array are unique.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>all_unique([1,2,3])</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>all_unique([1,2,1])</code><br>Output: <code>False</code><br><br>",
+      "template": "def all_unique(arr):\n    pass",
+      "validation": "assert all_unique([1,2,3]) == True\nassert all_unique([1,2,1]) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Contains Substring",
+      "difficulty": "Easy",
+      "desc": "Return True if sub is present in s.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>contains_sub('hello', 'ell')</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>contains_sub('hello', 'world')</code><br>Output: <code>False</code><br><br>",
+      "template": "def contains_sub(s, sub):\n    pass",
+      "validation": "assert contains_sub('hello', 'ell') == True\nassert contains_sub('hello', 'world') == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Nth Multiple",
+      "difficulty": "Easy",
+      "desc": "Return the nth multiple of m.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>nth_multiple(3, 5)</code><br>Output: <code>15</code><br><br><strong>Example 2:</strong><br>Input: <code>nth_multiple(1, 10)</code><br>Output: <code>10</code><br><br>",
+      "template": "def nth_multiple(n, m):\n    pass",
+      "validation": "assert nth_multiple(3, 5) == 15\nassert nth_multiple(1, 10) == 10\nprint(\"Passed\")"
+    },
+    {
+      "title": "Count Evens",
+      "difficulty": "Easy",
+      "desc": "Return the number of even numbers in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_evens([1,2,3,4])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_evens([1,3,5])</code><br>Output: <code>0</code><br><br>",
+      "template": "def count_evens(arr):\n    pass",
+      "validation": "assert count_evens([1,2,3,4]) == 2\nassert count_evens([1,3,5]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Count Odds",
+      "difficulty": "Easy",
+      "desc": "Return the number of odd numbers in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_odds([1,2,3,4])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_odds([2,4,6])</code><br>Output: <code>0</code><br><br>",
+      "template": "def count_odds(arr):\n    pass",
+      "validation": "assert count_odds([1,2,3,4]) == 2\nassert count_odds([2,4,6]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Is Empty",
+      "difficulty": "Easy",
+      "desc": "Return True if the array/string is empty.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_empty('')</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_empty([1])</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_empty(item):\n    pass",
+      "validation": "assert is_empty('') == True\nassert is_empty([1]) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Repeat String",
+      "difficulty": "Easy",
+      "desc": "Return the string repeated n times.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>repeat_str('a', 3)</code><br>Output: <code>'aaa'</code><br><br><strong>Example 2:</strong><br>Input: <code>repeat_str('xyz', 2)</code><br>Output: <code>'xyzxyz'</code><br><br>",
+      "template": "def repeat_str(s, n):\n    pass",
+      "validation": "assert repeat_str('a', 3) == 'aaa'\nassert repeat_str('xyz', 2) == 'xyzxyz'\nprint(\"Passed\")"
+    },
+    {
+      "title": "Add One",
+      "difficulty": "Easy",
+      "desc": "Add 1 to the given number.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>add_one(5)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>add_one(-1)</code><br>Output: <code>0</code><br><br>",
+      "template": "def add_one(n):\n    pass",
+      "validation": "assert add_one(5) == 6\nassert add_one(-1) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Double",
+      "difficulty": "Easy",
+      "desc": "Return the number multiplied by 2.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>double_n(4)</code><br>Output: <code>8</code><br><br><strong>Example 2:</strong><br>Input: <code>double_n(0)</code><br>Output: <code>0</code><br><br>",
+      "template": "def double_n(n):\n    pass",
+      "validation": "assert double_n(4) == 8\nassert double_n(0) == 0\nprint(\"Passed\")"
+    }
+  ],
+  "Medium": [
+    {
+      "title": "Reverse Int Overflow",
+      "difficulty": "Medium",
+      "desc": "Reverse the digits of a signed integer. Return 0 if it overflows.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>reverse_int(123)</code><br>Output: <code>321</code><br><br><strong>Example 2:</strong><br>Input: <code>reverse_int(-123)</code><br>Output: <code>-321</code><br><br>",
+      "template": "def reverse_int(x):\n    pass",
+      "validation": "assert reverse_int(123) == 321\nassert reverse_int(-123) == -321\nprint(\"Passed\")"
+    },
+    {
+      "title": "Group Anagrams",
+      "difficulty": "Medium",
+      "desc": "Group an array of strings into anagrams.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sorted([sorted(x) for x in group_anagrams(['eat','tea','tan','ate','nat','bat'])])</code><br>Output: <code>sorted([sorted(['eat','tea','ate']), sorted(['tan','nat']), sorted(['bat'])])</code><br><br><strong>Example 2:</strong><br>Input: <code>group_anagrams([''])</code><br>Output: <code>[['']]</code><br><br>",
+      "template": "def group_anagrams(strs):\n    pass",
+      "validation": "assert sorted([sorted(x) for x in group_anagrams(['eat','tea','tan','ate','nat','bat'])]) == sorted([sorted(['eat','tea','ate']), sorted(['tan','nat']), sorted(['bat'])])\nassert group_anagrams(['']) == [['']]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Valid Parentheses",
+      "difficulty": "Medium",
+      "desc": "Given a string of '()', '{}', '[]', return True if closed properly.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_valid_brackets('()[]{}')</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_valid_brackets('([)]')</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_valid_brackets(s):\n    pass",
+      "validation": "assert is_valid_brackets('()[]{}') == True\nassert is_valid_brackets('([)]') == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Rotate Array",
+      "difficulty": "Medium",
+      "desc": "Rotate an array to the right by k steps. Return the rotated array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>rotate_arr([1,2,3,4,5,6,7], 3)</code><br>Output: <code>[5,6,7,1,2,3,4]</code><br><br><strong>Example 2:</strong><br>Input: <code>rotate_arr([-1,-100,3,99], 2)</code><br>Output: <code>[3,99,-1,-100]</code><br><br>",
+      "template": "def rotate_arr(arr, k):\n    pass",
+      "validation": "assert rotate_arr([1,2,3,4,5,6,7], 3) == [5,6,7,1,2,3,4]\nassert rotate_arr([-1,-100,3,99], 2) == [3,99,-1,-100]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Find Peak Element",
+      "difficulty": "Medium",
+      "desc": "Find a peak element in an array and return its index.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_peak([1,2,3,1])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>find_peak([1])</code><br>Output: <code>0</code><br><br>",
+      "template": "def find_peak(arr):\n    pass",
+      "validation": "assert find_peak([1,2,3,1]) == 2\nassert find_peak([1]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Sort Colors",
+      "difficulty": "Medium",
+      "desc": "Given an array of 0s, 1s, and 2s, sort them in-place and return the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sort_colors([2,0,2,1,1,0])</code><br>Output: <code>[0,0,1,1,2,2]</code><br><br><strong>Example 2:</strong><br>Input: <code>sort_colors([2,0,1])</code><br>Output: <code>[0,1,2]</code><br><br>",
+      "template": "def sort_colors(arr):\n    pass",
+      "validation": "assert sort_colors([2,0,2,1,1,0]) == [0,0,1,1,2,2]\nassert sort_colors([2,0,1]) == [0,1,2]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Kth Largest",
+      "difficulty": "Medium",
+      "desc": "Find the kth largest element in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>kth_largest([3,2,1,5,6,4], 2)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>kth_largest([3,2,3,1,2,4,5,5,6], 4)</code><br>Output: <code>4</code><br><br>",
+      "template": "def kth_largest(arr, k):\n    pass",
+      "validation": "assert kth_largest([3,2,1,5,6,4], 2) == 5\nassert kth_largest([3,2,3,1,2,4,5,5,6], 4) == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Top K Frequent Elements",
+      "difficulty": "Medium",
+      "desc": "Return the k most frequent elements in an array. Sorted in ascending order for the output.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sorted(top_k([1,1,1,2,2,3], 2))</code><br>Output: <code>[1,2]</code><br><br><strong>Example 2:</strong><br>Input: <code>top_k([1], 1)</code><br>Output: <code>[1]</code><br><br>",
+      "template": "def top_k(arr, k):\n    pass",
+      "validation": "assert sorted(top_k([1,1,1,2,2,3], 2)) == [1,2]\nassert top_k([1], 1) == [1]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Longest Unique Substring",
+      "difficulty": "Medium",
+      "desc": "Find the length of the longest substring without repeating characters.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>longest_unique_sub('abcabcbb')</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>longest_unique_sub('bbbbb')</code><br>Output: <code>1</code><br><br>",
+      "template": "def longest_unique_sub(s):\n    pass",
+      "validation": "assert longest_unique_sub('abcabcbb') == 3\nassert longest_unique_sub('bbbbb') == 1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Container With Most Water",
+      "difficulty": "Medium",
+      "desc": "Find two lines that together with x-axis form a container, such that the container contains the most water.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>max_area([1,8,6,2,5,4,8,3,7])</code><br>Output: <code>49</code><br><br><strong>Example 2:</strong><br>Input: <code>max_area([1,1])</code><br>Output: <code>1</code><br><br>",
+      "template": "def max_area(heights):\n    pass",
+      "validation": "assert max_area([1,8,6,2,5,4,8,3,7]) == 49\nassert max_area([1,1]) == 1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Spiral Matrix",
+      "difficulty": "Medium",
+      "desc": "Given an m x n matrix, return all elements in spiral order.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>spiral([[1,2,3],[4,5,6],[7,8,9]])</code><br>Output: <code>[1,2,3,6,9,8,7,4,5]</code><br><br><strong>Example 2:</strong><br>Input: <code>spiral([[1]])</code><br>Output: <code>[1]</code><br><br>",
+      "template": "def spiral(matrix):\n    pass",
+      "validation": "assert spiral([[1,2,3],[4,5,6],[7,8,9]]) == [1,2,3,6,9,8,7,4,5]\nassert spiral([[1]]) == [1]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Coin Change",
+      "difficulty": "Medium",
+      "desc": "Return the fewest number of coins to make up an amount, or -1 if impossible.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>coin_change([1,2,5], 11)</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>coin_change([2], 3)</code><br>Output: <code>-1</code><br><br>",
+      "template": "def coin_change(coins, amount):\n    pass",
+      "validation": "assert coin_change([1,2,5], 11) == 3\nassert coin_change([2], 3) == -1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Jump Game",
+      "difficulty": "Medium",
+      "desc": "Return True if you can reach the last index of the array, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>can_jump([2,3,1,1,4])</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>can_jump([3,2,1,0,4])</code><br>Output: <code>False</code><br><br>",
+      "template": "def can_jump(arr):\n    pass",
+      "validation": "assert can_jump([2,3,1,1,4]) == True\nassert can_jump([3,2,1,0,4]) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Merge Intervals",
+      "difficulty": "Medium",
+      "desc": "Merge all overlapping intervals. List of lists [start, end].",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>merge_intervals([[1,3],[2,6],[8,10],[15,18]])</code><br>Output: <code>[[1,6],[8,10],[15,18]]</code><br><br><strong>Example 2:</strong><br>Input: <code>merge_intervals([[1,4],[4,5]])</code><br>Output: <code>[[1,5]]</code><br><br>",
+      "template": "def merge_intervals(intervals):\n    pass",
+      "validation": "assert merge_intervals([[1,3],[2,6],[8,10],[15,18]]) == [[1,6],[8,10],[15,18]]\nassert merge_intervals([[1,4],[4,5]]) == [[1,5]]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Search in Rotated Array",
+      "difficulty": "Medium",
+      "desc": "Find target in a rotated sorted array. Return index or -1.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>search_rotated([4,5,6,7,0,1,2], 0)</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>search_rotated([4,5,6,7,0,1,2], 3)</code><br>Output: <code>-1</code><br><br>",
+      "template": "def search_rotated(arr, target):\n    pass",
+      "validation": "assert search_rotated([4,5,6,7,0,1,2], 0) == 4\nassert search_rotated([4,5,6,7,0,1,2], 3) == -1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Longest Increasing Subsequence",
+      "difficulty": "Medium",
+      "desc": "Return the length of the longest strictly increasing subsequence.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>length_of_lis([10,9,2,5,3,7,101,18])</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>length_of_lis([7,7,7,7])</code><br>Output: <code>1</code><br><br>",
+      "template": "def length_of_lis(arr):\n    pass",
+      "validation": "assert length_of_lis([10,9,2,5,3,7,101,18]) == 4\nassert length_of_lis([7,7,7,7]) == 1\nprint(\"Passed\")"
+    },
+    {
+      "title": "House Robber",
+      "difficulty": "Medium",
+      "desc": "Determine max money you can rob without robbing adjacent houses.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>rob([1,2,3,1])</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>rob([2,7,9,3,1])</code><br>Output: <code>12</code><br><br>",
+      "template": "def rob(nums):\n    pass",
+      "validation": "assert rob([1,2,3,1]) == 4\nassert rob([2,7,9,3,1]) == 12\nprint(\"Passed\")"
+    },
+    {
+      "title": "Word Break",
+      "difficulty": "Medium",
+      "desc": "Return True if s can be segmented into a sequence of dictionary words.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>word_break('leetcode', ['leet','code'])</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>word_break('catsandog', ['cats','dog','sand','and','cat'])</code><br>Output: <code>False</code><br><br>",
+      "template": "def word_break(s, wordDict):\n    pass",
+      "validation": "assert word_break('leetcode', ['leet','code']) == True\nassert word_break('catsandog', ['cats','dog','sand','and','cat']) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Set Matrix Zeroes",
+      "difficulty": "Medium",
+      "desc": "If an element is 0, set its entire row and column to 0. Return modified.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>set_zeroes([[1,1,1],[1,0,1],[1,1,1]])</code><br>Output: <code>[[1,0,1],[0,0,0],[1,0,1]]</code><br><br><strong>Example 2:</strong><br>Input: <code>set_zeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]])</code><br>Output: <code>[[0,0,0,0],[0,4,5,0],[0,3,1,0]]</code><br><br>",
+      "template": "def set_zeroes(matrix):\n    pass",
+      "validation": "assert set_zeroes([[1,1,1],[1,0,1],[1,1,1]]) == [[1,0,1],[0,0,0],[1,0,1]]\nassert set_zeroes([[0,1,2,0],[3,4,5,2],[1,3,1,5]]) == [[0,0,0,0],[0,4,5,0],[0,3,1,0]]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Permutations",
+      "difficulty": "Medium",
+      "desc": "Return all possible permutations of an array of distinct integers.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sorted(permute([1,2]))</code><br>Output: <code>[[1,2],[2,1]]</code><br><br><strong>Example 2:</strong><br>Input: <code>permute([1])</code><br>Output: <code>[[1]]</code><br><br>",
+      "template": "def permute(nums):\n    pass",
+      "validation": "assert sorted(permute([1,2])) == [[1,2],[2,1]]\nassert permute([1]) == [[1]]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Product Except Self",
+      "difficulty": "Medium",
+      "desc": "Return answer where answer[i] is product of all elements except nums[i].",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>product_except_self([1,2,3,4])</code><br>Output: <code>[24,12,8,6]</code><br><br><strong>Example 2:</strong><br>Input: <code>product_except_self([-1,1,0,-3,3])</code><br>Output: <code>[0,0,9,0,0]</code><br><br>",
+      "template": "def product_except_self(nums):\n    pass",
+      "validation": "assert product_except_self([1,2,3,4]) == [24,12,8,6]\nassert product_except_self([-1,1,0,-3,3]) == [0,0,9,0,0]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Find Duplicate Number",
+      "difficulty": "Medium",
+      "desc": "Given an array of size n+1 with integers in [1,n], return the one repeated number.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_duplicate([1,3,4,2,2])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>find_duplicate([3,1,3,4,2])</code><br>Output: <code>3</code><br><br>",
+      "template": "def find_duplicate(nums):\n    pass",
+      "validation": "assert find_duplicate([1,3,4,2,2]) == 2\nassert find_duplicate([3,1,3,4,2]) == 3\nprint(\"Passed\")"
+    },
+    {
+      "title": "Subarray Sum K",
+      "difficulty": "Medium",
+      "desc": "Return the total number of continuous subarrays whose sum equals k.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>subarray_sum([1,1,1], 2)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>subarray_sum([1,2,3], 3)</code><br>Output: <code>2</code><br><br>",
+      "template": "def subarray_sum(nums, k):\n    pass",
+      "validation": "assert subarray_sum([1,1,1], 2) == 2\nassert subarray_sum([1,2,3], 3) == 2\nprint(\"Passed\")"
+    },
+    {
+      "title": "LRU End State",
+      "difficulty": "Medium",
+      "desc": "Given queries (add item, return list), return the final state sorted.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>lru_sequence([1,2,3,4], 2)</code><br>Output: <code>[3,4]</code><br><br><strong>Example 2:</strong><br>Input: <code>lru_sequence([1,2,1,3], 2)</code><br>Output: <code>[1,3]</code><br><br>",
+      "template": "def lru_sequence(queries, cap):\n    pass",
+      "validation": "assert lru_sequence([1,2,3,4], 2) == [3,4]\nassert lru_sequence([1,2,1,3], 2) == [1,3]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Max Product Subarray",
+      "difficulty": "Medium",
+      "desc": "Find the contiguous subarray with the largest product.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>max_product([2,3,-2,4])</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>max_product([-2,0,-1])</code><br>Output: <code>0</code><br><br>",
+      "template": "def max_product(nums):\n    pass",
+      "validation": "assert max_product([2,3,-2,4]) == 6\nassert max_product([-2,0,-1]) == 0\nprint(\"Passed\")"
+    }
+  ],
+  "Hard": [
+    {
+      "title": "First Missing Positive",
+      "difficulty": "Hard",
+      "desc": "Return the smallest missing positive integer in an unsorted array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>first_missing_pos([1,2,0])</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>first_missing_pos([3,4,-1,1])</code><br>Output: <code>2</code><br><br>",
+      "template": "def first_missing_pos(nums):\n    pass",
+      "validation": "assert first_missing_pos([1,2,0]) == 3\nassert first_missing_pos([3,4,-1,1]) == 2\nprint(\"Passed\")"
+    },
+    {
+      "title": "Trapping Rain Water",
+      "difficulty": "Hard",
+      "desc": "Given n non-negative integers representing an elevation map, compute how much water it can trap.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>trap([0,1,0,2,1,0,1,3,2,1,2,1])</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>trap([4,2,0,3,2,5])</code><br>Output: <code>9</code><br><br>",
+      "template": "def trap(heights):\n    pass",
+      "validation": "assert trap([0,1,0,2,1,0,1,3,2,1,2,1]) == 6\nassert trap([4,2,0,3,2,5]) == 9\nprint(\"Passed\")"
+    },
+    {
+      "title": "Median of Two Sorted Arrays",
+      "difficulty": "Hard",
+      "desc": "Return the median of the two sorted arrays.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_median([1,3], [2])</code><br>Output: <code>2.0</code><br><br><strong>Example 2:</strong><br>Input: <code>find_median([1,2], [3,4])</code><br>Output: <code>2.5</code><br><br>",
+      "template": "def find_median(nums1, nums2):\n    pass",
+      "validation": "assert find_median([1,3], [2]) == 2.0\nassert find_median([1,2], [3,4]) == 2.5\nprint(\"Passed\")"
+    },
+    {
+      "title": "Longest Valid Parentheses",
+      "difficulty": "Hard",
+      "desc": "Find the length of the longest valid well-formed parentheses substring.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>longest_valid('(()')</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>longest_valid(')()())')</code><br>Output: <code>4</code><br><br>",
+      "template": "def longest_valid(s):\n    pass",
+      "validation": "assert longest_valid('(()') == 2\nassert longest_valid(')()())') == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Wildcard Matching",
+      "difficulty": "Hard",
+      "desc": "Implement wildcard pattern matching with '?' and '*'.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_match('aa', 'a')</code><br>Output: <code>False</code><br><br><strong>Example 2:</strong><br>Input: <code>is_match('aa', '*')</code><br>Output: <code>True</code><br><br>",
+      "template": "def is_match(s, p):\n    pass",
+      "validation": "assert is_match('aa', 'a') == False\nassert is_match('aa', '*') == True\nprint(\"Passed\")"
+    },
+    {
+      "title": "Jump Game II",
+      "difficulty": "Hard",
+      "desc": "Return the minimum number of jumps to reach the last index.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>jump([2,3,1,1,4])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>jump([2,3,0,1,4])</code><br>Output: <code>2</code><br><br>",
+      "template": "def jump(nums):\n    pass",
+      "validation": "assert jump([2,3,1,1,4]) == 2\nassert jump([2,3,0,1,4]) == 2\nprint(\"Passed\")"
+    },
+    {
+      "title": "N-Queens",
+      "difficulty": "Hard",
+      "desc": "Return the number of distinct solutions to the n-queens puzzle.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>total_n_queens(4)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>total_n_queens(1)</code><br>Output: <code>1</code><br><br>",
+      "template": "def total_n_queens(n):\n    pass",
+      "validation": "assert total_n_queens(4) == 2\nassert total_n_queens(1) == 1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Minimum Window Substring",
+      "difficulty": "Hard",
+      "desc": "Return the min window substring of s such that every character in t is included.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>min_window('ADOBECODEBANC', 'ABC')</code><br>Output: <code>'BANC'</code><br><br><strong>Example 2:</strong><br>Input: <code>min_window('a', 'a')</code><br>Output: <code>'a'</code><br><br>",
+      "template": "def min_window(s, t):\n    pass",
+      "validation": "assert min_window('ADOBECODEBANC', 'ABC') == 'BANC'\nassert min_window('a', 'a') == 'a'\nprint(\"Passed\")"
+    },
+    {
+      "title": "Largest Rectangle in Histogram",
+      "difficulty": "Hard",
+      "desc": "Find the area of largest rectangle in the histogram.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>largest_rectangle([2,1,5,6,2,3])</code><br>Output: <code>10</code><br><br><strong>Example 2:</strong><br>Input: <code>largest_rectangle([2,4])</code><br>Output: <code>4</code><br><br>",
+      "template": "def largest_rectangle(heights):\n    pass",
+      "validation": "assert largest_rectangle([2,1,5,6,2,3]) == 10\nassert largest_rectangle([2,4]) == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Edit Distance",
+      "difficulty": "Hard",
+      "desc": "Return min operations to convert word1 to word2.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>min_distance('horse', 'ros')</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>min_distance('intention', 'execution')</code><br>Output: <code>5</code><br><br>",
+      "template": "def min_distance(word1, word2):\n    pass",
+      "validation": "assert min_distance('horse', 'ros') == 3\nassert min_distance('intention', 'execution') == 5\nprint(\"Passed\")"
+    },
+    {
+      "title": "Scramble String",
+      "difficulty": "Hard",
+      "desc": "Determine if s2 is a scrambled string of s1.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_scramble('great', 'rgeat')</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>is_scramble('abcde', 'caebd')</code><br>Output: <code>False</code><br><br>",
+      "template": "def is_scramble(s1, s2):\n    pass",
+      "validation": "assert is_scramble('great', 'rgeat') == True\nassert is_scramble('abcde', 'caebd') == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Distinct Subsequences",
+      "difficulty": "Hard",
+      "desc": "Return the number of distinct subsequences of s which equals t.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>num_distinct('rabbbit', 'rabbit')</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>num_distinct('babgbag', 'bag')</code><br>Output: <code>5</code><br><br>",
+      "template": "def num_distinct(s, t):\n    pass",
+      "validation": "assert num_distinct('rabbbit', 'rabbit') == 3\nassert num_distinct('babgbag', 'bag') == 5\nprint(\"Passed\")"
+    },
+    {
+      "title": "Word Ladder Length",
+      "difficulty": "Hard",
+      "desc": "Return length of shortest transformation sequence.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>ladder_length('hit', 'cog', ['hot','dot','dog','lot','log','cog'])</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>ladder_length('hit', 'cog', ['hot','dot','dog','lot','log'])</code><br>Output: <code>0</code><br><br>",
+      "template": "def ladder_length(beginWord, endWord, wordList):\n    pass",
+      "validation": "assert ladder_length('hit', 'cog', ['hot','dot','dog','lot','log','cog']) == 5\nassert ladder_length('hit', 'cog', ['hot','dot','dog','lot','log']) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Candy",
+      "difficulty": "Hard",
+      "desc": "Return min candies to distribute based on ratings.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>candy([1,0,2])</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>candy([1,2,2])</code><br>Output: <code>4</code><br><br>",
+      "template": "def candy(ratings):\n    pass",
+      "validation": "assert candy([1,0,2]) == 5\nassert candy([1,2,2]) == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Sliding Window Maximum",
+      "difficulty": "Hard",
+      "desc": "Return the max sliding window array of size k.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>max_sliding_window([1,3,-1,-3,5,3,6,7], 3)</code><br>Output: <code>[3,3,5,5,6,7]</code><br><br><strong>Example 2:</strong><br>Input: <code>max_sliding_window([1], 1)</code><br>Output: <code>[1]</code><br><br>",
+      "template": "def max_sliding_window(nums, k):\n    pass",
+      "validation": "assert max_sliding_window([1,3,-1,-3,5,3,6,7], 3) == [3,3,5,5,6,7]\nassert max_sliding_window([1], 1) == [1]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Find Min Rotated II",
+      "difficulty": "Hard",
+      "desc": "Find min element in rotated array that may contain duplicates.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_min_rot([1,3,5])</code><br>Output: <code>1</code><br><br><strong>Example 2:</strong><br>Input: <code>find_min_rot([2,2,2,0,1])</code><br>Output: <code>0</code><br><br>",
+      "template": "def find_min_rot(nums):\n    pass",
+      "validation": "assert find_min_rot([1,3,5]) == 1\nassert find_min_rot([2,2,2,0,1]) == 0\nprint(\"Passed\")"
+    },
+    {
+      "title": "Dungeon Game",
+      "difficulty": "Hard",
+      "desc": "Return knight's min initial health to rescue princess.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>calculate_min_hp([[-2,-3,3],[-5,-10,1],[10,30,-5]])</code><br>Output: <code>7</code><br><br><strong>Example 2:</strong><br>Input: <code>calculate_min_hp([[0]])</code><br>Output: <code>1</code><br><br>",
+      "template": "def calculate_min_hp(dungeon):\n    pass",
+      "validation": "assert calculate_min_hp([[-2,-3,3],[-5,-10,1],[10,30,-5]]) == 7\nassert calculate_min_hp([[0]]) == 1\nprint(\"Passed\")"
+    },
+    {
+      "title": "Max Points on a Line",
+      "difficulty": "Hard",
+      "desc": "Given an array of points, return the maximum number of points on same line.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>max_points([[1,1],[2,2],[3,3]])</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>max_points([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]])</code><br>Output: <code>4</code><br><br>",
+      "template": "def max_points(points):\n    pass",
+      "validation": "assert max_points([[1,1],[2,2],[3,3]]) == 3\nassert max_points([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]) == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Regular Expression",
+      "difficulty": "Hard",
+      "desc": "Implement regex matching with '.' and '*'.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_regex_match('aa', 'a')</code><br>Output: <code>False</code><br><br><strong>Example 2:</strong><br>Input: <code>is_regex_match('ab', '.*')</code><br>Output: <code>True</code><br><br>",
+      "template": "def is_regex_match(s, p):\n    pass",
+      "validation": "assert is_regex_match('aa', 'a') == False\nassert is_regex_match('ab', '.*') == True\nprint(\"Passed\")"
+    },
+    {
+      "title": "Merge k Sorted Lists",
+      "difficulty": "Hard",
+      "desc": "Merge k sorted arrays into one sorted array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>merge_k_arrays([[1,4,5],[1,3,4],[2,6]])</code><br>Output: <code>[1,1,2,3,4,4,5,6]</code><br><br><strong>Example 2:</strong><br>Input: <code>merge_k_arrays([])</code><br>Output: <code>[]</code><br><br>",
+      "template": "def merge_k_arrays(lists):\n    pass",
+      "validation": "assert merge_k_arrays([[1,4,5],[1,3,4],[2,6]]) == [1,1,2,3,4,4,5,6]\nassert merge_k_arrays([]) == []\nprint(\"Passed\")"
+    },
+    {
+      "title": "Reverse Nodes in k-Group",
+      "difficulty": "Hard",
+      "desc": "Reverse elements of array k at a time.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>reverse_k_group([1,2,3,4,5], 2)</code><br>Output: <code>[2,1,4,3,5]</code><br><br><strong>Example 2:</strong><br>Input: <code>reverse_k_group([1,2,3,4,5], 3)</code><br>Output: <code>[3,2,1,4,5]</code><br><br>",
+      "template": "def reverse_k_group(arr, k):\n    pass",
+      "validation": "assert reverse_k_group([1,2,3,4,5], 2) == [2,1,4,3,5]\nassert reverse_k_group([1,2,3,4,5], 3) == [3,2,1,4,5]\nprint(\"Passed\")"
+    },
+    {
+      "title": "Substring with Concatenation",
+      "difficulty": "Hard",
+      "desc": "Find starting indices of substrings that are a concatenation of all words.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_substring('barfoothefoobarman', ['foo','bar'])</code><br>Output: <code>[0,9]</code><br><br><strong>Example 2:</strong><br>Input: <code>find_substring('wordgoodgoodgoodbestword', ['word','good','best','word'])</code><br>Output: <code>[]</code><br><br>",
+      "template": "def find_substring(s, words):\n    pass",
+      "validation": "assert find_substring('barfoothefoobarman', ['foo','bar']) == [0,9]\nassert find_substring('wordgoodgoodgoodbestword', ['word','good','best','word']) == []\nprint(\"Passed\")"
+    },
+    {
+      "title": "Sudoku Valid Row",
+      "difficulty": "Hard",
+      "desc": "Given an array of 9 strings, return True if valid sudoku row.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>valid_row(['5','3','.','.','7','.','.','.','.'])</code><br>Output: <code>True</code><br><br><strong>Example 2:</strong><br>Input: <code>valid_row(['5','5','.','.','7','.','.','.','.'])</code><br>Output: <code>False</code><br><br>",
+      "template": "def valid_row(row):\n    pass",
+      "validation": "assert valid_row(['5','3','.','.','7','.','.','.','.']) == True\nassert valid_row(['5','5','.','.','7','.','.','.','.']) == False\nprint(\"Passed\")"
+    },
+    {
+      "title": "Largest Divisible Subset",
+      "difficulty": "Hard",
+      "desc": "Find largest subset where every pair is mutually divisible (return its size).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>largest_divisible([1,2,3])</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>largest_divisible([1,2,4,8])</code><br>Output: <code>4</code><br><br>",
+      "template": "def largest_divisible(nums):\n    pass",
+      "validation": "assert largest_divisible([1,2,3]) == 2\nassert largest_divisible([1,2,4,8]) == 4\nprint(\"Passed\")"
+    },
+    {
+      "title": "Perfect Squares",
+      "difficulty": "Hard",
+      "desc": "Return least number of perfect square numbers that sum to n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>num_squares(12)</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>num_squares(13)</code><br>Output: <code>2</code><br><br>",
+      "template": "def num_squares(n):\n    pass",
+      "validation": "assert num_squares(12) == 3\nassert num_squares(13) == 2\nprint(\"Passed\")"
+    }
+  ]
+}

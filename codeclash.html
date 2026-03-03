@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeClash — 1v1 Competitive Coding</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080a0f;
+      --bg2: #0d1017;
+      --panel: #111520;
+      --border: #1e2535;
+      --accent: #00f5a0;
+      --accent2: #ff3f5b;
+      --accent3: #7b5cff;
+      --text: #e8ecf5;
+      --muted: #5a6480;
+      --mono: 'Share Tech Mono', monospace;
+      --head: 'Bebas Neue', sans-serif;
+      --body: 'DM Sans', sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body);
+      overflow-x: hidden;
+    }
+
+    /* ── SCANLINE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 0, 0, 0.04) 2px,
+          rgba(0, 0, 0, 0.04) 4px);
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 10, 15, 0.85);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-family: var(--head);
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: var(--text);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav ul a {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.55rem 1.4rem;
+      border: none;
+      cursor: pointer;
+      clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+      transition: opacity 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.85;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.35;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.15;
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    .orb1 {
+      width: 600px;
+      height: 600px;
+      background: var(--accent3);
+      top: -100px;
+      left: -150px;
+    }
+
+    .orb2 {
+      width: 400px;
+      height: 400px;
+      background: var(--accent);
+      bottom: -50px;
+      right: -100px;
+      animation-delay: -3s;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.15;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 0.22;
+      }
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.35rem 1rem;
+      margin-bottom: 2rem;
+      display: inline-block;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--head);
+      font-size: clamp(4.5rem, 12vw, 10rem);
+      line-height: 0.95;
+      letter-spacing: 0.03em;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.6s 0.15s ease both;
+    }
+
+    .hero-title .vs {
+      color: var(--accent2);
+      display: inline-block;
+      position: relative;
+    }
+
+    .hero-title .vs::before {
+      content: '';
+      position: absolute;
+      inset: -8px -12px;
+      border: 2px solid var(--accent2);
+      opacity: 0.4;
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+
+      0%,
+      90%,
+      100% {
+        opacity: 0.4;
+      }
+
+      92%,
+      98% {
+        opacity: 0.05;
+      }
+
+      95% {
+        opacity: 0.7;
+      }
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.45s ease both;
+    }
+
+    .btn-primary {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.85rem 2.5rem;
+      border: none;
+      cursor: pointer;
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 245, 160, 0.35);
+    }
+
+    .btn-secondary {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      background: transparent;
+      padding: 0.85rem 2.5rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+      transition: border-color 0.2s, color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent3);
+      color: var(--accent3);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── LIVE MATCH TICKER ── */
+    .ticker-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid var(--border);
+      overflow: hidden;
+      background: rgba(17, 21, 32, 0.9);
+      padding: 0.6rem 0;
+    }
+
+    .ticker {
+      display: flex;
+      gap: 3rem;
+      animation: scroll 30s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker span {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .ticker .live {
+      color: var(--accent);
+    }
+
+    .ticker .win {
+      color: var(--accent2);
+    }
+
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat {
+      padding: 2.5rem 3rem;
+      border-right: 1px solid var(--border);
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: var(--head);
+      font-size: 3.2rem;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── SECTIONS SHARED ── */
+    section {
+      padding: 7rem 4rem;
+    }
+
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--accent3);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--head);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── HOW IT WORKS ── */
+    #how {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 4rem;
+      border: 1px solid var(--border);
+    }
+
+    .step {
+      background: var(--panel);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .step:hover {
+      background: #161c2a;
+    }
+
+    .step-num {
+      font-family: var(--head);
+      font-size: 5rem;
+      color: var(--border);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+
+    .step:hover .step-num {
+      color: rgba(123, 92, 255, 0.2);
+    }
+
+    .step-icon {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .step h3 {
+      font-family: var(--head);
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── MATCH PREVIEW ── */
+    #arena {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .arena-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .match-ui {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .match-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+    }
+
+    .match-bar-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .match-bar-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .d1 {
+      background: var(--accent2);
+    }
+
+    .d2 {
+      background: #f5a623;
+    }
+
+    .d3 {
+      background: var(--accent);
+    }
+
+    .match-id {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .live-badge {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.2rem 0.6rem;
+      animation: blink 1.5s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .match-players {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+    }
+
+    .player-side {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .player-side:last-child {
+      border-right: none;
+      border-left: 1px solid var(--border);
+    }
+
+    .player-name {
+      font-family: var(--head);
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+
+    .player-rank {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .lang-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid var(--accent3);
+      color: var(--accent3);
+      letter-spacing: 0.08em;
+    }
+
+    .vs-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-family: var(--head);
+      font-size: 2.5rem;
+      color: var(--accent2);
+      min-width: 80px;
+    }
+
+    .code-editor {
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .code-pane {
+      padding: 1.5rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+
+    .code-pane:last-child {
+      border-right: none;
+    }
+
+    .code-pane pre {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      line-height: 1.8;
+      color: var(--muted);
+      overflow: hidden;
+    }
+
+    .code-pane pre .kw {
+      color: var(--accent3);
+    }
+
+    .code-pane pre .fn {
+      color: var(--accent);
+    }
+
+    .code-pane pre .str {
+      color: #f5a623;
+    }
+
+    .code-pane pre .cm {
+      color: #3a4259;
+    }
+
+    .cursor-line::after {
+      content: '▌';
+      color: var(--accent);
+      animation: blink 1s step-end infinite;
+    }
+
+    .match-footer {
+      border-top: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg2);
+    }
+
+    .time-left {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--accent2);
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 3px;
+      background: var(--border);
+      margin: 0 2rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 45%;
+      background: linear-gradient(90deg, var(--accent3), var(--accent));
+      animation: fill 8s linear infinite;
+    }
+
+    @keyframes fill {
+      from {
+        width: 10%;
+      }
+
+      to {
+        width: 90%;
+      }
+    }
+
+    .test-count {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .test-count .pass {
+      color: var(--accent);
+    }
+
+    /* ── FEATURES ── */
+    #features {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+
+    .feature {
+      background: var(--panel);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .feature:hover {
+      background: #161c2a;
+    }
+
+    .feature::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent3), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feature:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .feature h3 {
+      font-family: var(--head);
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.7rem;
+    }
+
+    .feature p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── LEADERBOARD ── */
+    #leaderboard {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .lb-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .lb-table {
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .lb-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 120px 120px 100px;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .lb-row:last-child {
+      border-bottom: none;
+    }
+
+    .lb-row:hover {
+      background: var(--panel);
+    }
+
+    .lb-row.header {
+      background: var(--bg2);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .lb-rank {
+      font-family: var(--head);
+      font-size: 1.4rem;
+    }
+
+    .rank-1 {
+      color: #ffd700;
+    }
+
+    .rank-2 {
+      color: #c0c0c0;
+    }
+
+    .rank-3 {
+      color: #cd7f32;
+    }
+
+    .lb-player {
+      font-weight: 500;
+    }
+
+    .lb-player small {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .lb-elo {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .lb-wins {
+      font-family: var(--mono);
+      font-size: 0.9rem;
+    }
+
+    .lb-streak {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent2);
+      text-align: right;
+    }
+
+    /* ── CTA ── */
+    #cta {
+      position: relative;
+      text-align: center;
+      padding: 8rem 2rem;
+      border-top: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    #cta .bg-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--head);
+      font-size: 18vw;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: -0.02em;
+    }
+
+    #cta h2 {
+      font-family: var(--head);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    #cta p {
+      color: var(--muted);
+      max-width: 400px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .cta-actions {
+      position: relative;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    footer .logo {
+      font-size: 1.2rem;
+    }
+
+    footer p {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    footer nav ul {
+      gap: 1.5rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      nav ul,
+      .nav-cta {
+        display: none;
+      }
+
+      section {
+        padding: 5rem 1.5rem;
+      }
+
+      .stats-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        border-right: 1px solid var(--border);
+      }
+
+      .stat:nth-child(even) {
+        border-right: none;
+      }
+
+      .steps,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .match-players {
+        grid-template-columns: 1fr;
+      }
+
+      .vs-center {
+        display: none;
+      }
+
+      .code-editor {
+        grid-template-columns: 1fr;
+      }
+
+      .lb-row {
+        grid-template-columns: 40px 1fr 80px;
+      }
+
+      .lb-wins,
+      .lb-streak {
+        display: none;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      footer nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">CODE<span>CLASH</span></div>
+    <ul>
+      <li><a href="#how">HOW IT WORKS</a></li>
+      <li><a href="#features">FEATURES</a></li>
+      <li><a href="#leaderboard">LEADERBOARD</a></li>
+    </ul>
+    <a href="/lobby" class="nav-cta">ENTER ARENA</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="grid-bg"></div>
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+
+    <div class="hero-tag">⚡ REAL-TIME 1v1 CODING BATTLES</div>
+    <h1 class="hero-title">
+      CODE<br><span class="vs">VS</span><br>CODE
+    </h1>
+    <p class="hero-sub">
+      Two developers. One problem. First to pass all tests wins.
+      Climb the ranks, prove your mastery, crush your opponent.
+    </p>
+    <div class="hero-ctas">
+      <a href="/lobby" class="btn-primary">START BATTLING →</a>
+      <a href="#how" class="btn-secondary">WATCH DEMO</a>
+    </div>
+
+    <!-- LIVE TICKER -->
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <span class="live">● LIVE</span>
+        <span>x0r_dev <span class="win">defeated</span> nightcoder in 4:22</span>
+        <span>•</span>
+        <span class="live">● LIVE</span>
+        <span>algo_ace vs stackrunner — Round 3 — Dynamic Programming</span>
+        <span>•</span>
+        <span>devwitch <span class="win">defeated</span> nullpointer in 2:58 🔥 STREAK ×5</span>
+        <span>•</span>
+        <span class="live">● LIVE</span>
+        <span>bytehero vs codeghoul — Graphs — 47 watching</span>
+        <span>•</span>
+        <span>recursion_king <span class="win">defeated</span> bigO_hunter in 6:11</span>
+        <span>•</span>
+        <!-- duplicate for seamless scroll -->
+        <span class="live">● LIVE</span>
+        <span>x0r_dev <span class="win">defeated</span> nightcoder in 4:22</span>
+        <span>•</span>
+        <span class="live">● LIVE</span>
+        <span>algo_ace vs stackrunner — Round 3 — Dynamic Programming</span>
+        <span>•</span>
+        <span>devwitch <span class="win">defeated</span> nullpointer in 2:58 🔥 STREAK ×5</span>
+        <span>•</span>
+        <span class="live">● LIVE</span>
+        <span>bytehero vs codeghoul — Graphs — 47 watching</span>
+        <span>•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">42K+</div>
+      <div class="stat-label">Active Players</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1.2M</div>
+      <div class="stat-label">Matches Played</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2,800</div>
+      <div class="stat-label">Problems</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">317</div>
+      <div class="stat-label">Live Right Now</div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="section-tag">// process</div>
+    <h2 class="section-title">HOW THE<br>CLASH WORKS</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">🎯</div>
+        <h3>CHALLENGE OR QUEUE</h3>
+        <p>Challenge a friend by username or hop into ranked matchmaking. Get paired with an opponent at your skill
+          level instantly.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-icon">⚔️</div>
+        <h3>SAME PROBLEM, CLOCK TICKING</h3>
+        <p>Both players receive the same problem simultaneously. Pick your language — Python, JS, Go, Rust, C++ and more
+          — and start coding.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">🏆</div>
+        <h3>FIRST TO PASS WINS</h3>
+        <p>Run your solution against hidden test cases. First player to pass all tests wins the match, gains ELO, and
+          rises in the ranks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARENA PREVIEW -->
+  <div id="arena">
+    <div class="arena-header">
+      <div class="section-tag">// arena</div>
+      <h2 class="section-title">INSIDE THE ARENA</h2>
+    </div>
+    <div class="match-ui">
+      <div class="match-bar">
+        <div class="match-bar-dots">
+          <span class="d1"></span><span class="d2"></span><span class="d3"></span>
+        </div>
+        <span class="match-id">MATCH #48291 — MEDIUM — BINARY TREES</span>
+        <span class="live-badge">● LIVE</span>
+      </div>
+
+      <div class="match-players">
+        <div class="player-side">
+          <div class="player-name">X0R_DEV</div>
+          <div class="player-rank">ELO 2,104 · DIAMOND III</div>
+          <span class="lang-badge">PYTHON</span>
+        </div>
+        <div class="vs-center">VS</div>
+        <div class="player-side" style="text-align:right">
+          <div class="player-name">NIGHTCODER</div>
+          <div class="player-rank">ELO 2,089 · DIAMOND III</div>
+          <span class="lang-badge">JAVASCRIPT</span>
+        </div>
+      </div>
+
+      <div class="code-editor">
+        <div class="code-pane">
+          <pre><span class="cm"># x0r_dev's solution</span>
+<span class="kw">def</span> <span class="fn">maxDepth</span>(root):
+    <span class="kw">if not</span> root:
+        <span class="kw">return</span> <span class="str">0</span>
+    left = <span class="fn">maxDepth</span>(root.left)
+    right = <span class="fn">maxDepth</span>(root.right)
+    <span class="kw">return</span> <span class="fn">max</span>(left, right) + <span class="str">1</span>
+<span class="cursor-line"></span></pre>
+        </div>
+        <div class="code-pane">
+          <pre><span class="cm">// nightcoder's solution</span>
+<span class="kw">const</span> <span class="fn">maxDepth</span> = (root) => {
+    <span class="kw">if</span> (!root) <span class="kw">return</span> <span class="str">0</span>;
+    <span class="kw">return</span> <span class="fn">Math.max</span>(
+        <span class="fn">maxDepth</span>(root.left),
+        <span class="fn">maxDepth</span>(root.right)
+<span class="cursor-line"></span></pre>
+        </div>
+      </div>
+
+      <div class="match-footer">
+        <span class="time-left">⏱ 03:41 LEFT</span>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="test-count"><span class="pass">7</span>/12 TESTS PASSED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-tag">// features</div>
+    <h2 class="section-title">BUILT FOR<br>SERIOUS CODERS</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>REAL-TIME SYNC</h3>
+        <p>See your opponent's test pass count update live. Millisecond latency keeps every match edge-of-seat intense.
+        </p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌐</div>
+        <h3>12 LANGUAGES</h3>
+        <p>Python, JavaScript, TypeScript, Go, Rust, C++, Java, C#, Kotlin, Swift, Ruby, and PHP. Use your weapon of
+          choice.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>ELO RANKING</h3>
+        <p>True skill-based matchmaking. Climb from Bronze to Grandmaster through a fair, transparent rating system.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🏅</div>
+        <h3>SEASONAL LEAGUES</h3>
+        <p>Compete in monthly seasons with exclusive rewards, profile badges, and a top-100 Hall of Fame.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">👁️</div>
+        <h3>SPECTATE LIVE</h3>
+        <p>Watch top-ranked matches unfold in real time. Learn from elite players and cheer for your favorites.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🔍</div>
+        <h3>POST-MATCH ANALYSIS</h3>
+        <p>Replay the match step-by-step. See where you diverged, what your opponent did differently, and how to
+          improve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="leaderboard">
+    <div class="lb-header">
+      <div class="section-tag">// rankings</div>
+      <h2 class="section-title">GLOBAL LEADERBOARD</h2>
+    </div>
+    <div class="lb-table">
+      <div class="lb-row header">
+        <span>RANK</span><span>PLAYER</span><span>ELO</span><span>WINS</span><span>STREAK</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank rank-1">1</span>
+        <span class="lb-player">recursion_king <small>GRANDMASTER · Brazil</small></span>
+        <span class="lb-elo">3,412</span>
+        <span class="lb-wins">847</span>
+        <span class="lb-streak">🔥 ×18</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank rank-2">2</span>
+        <span class="lb-player">devwitch <small>GRANDMASTER · Germany</small></span>
+        <span class="lb-elo">3,389</span>
+        <span class="lb-wins">802</span>
+        <span class="lb-streak">🔥 ×12</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank rank-3">3</span>
+        <span class="lb-player">algo_ace <small>GRANDMASTER · Japan</small></span>
+        <span class="lb-elo">3,301</span>
+        <span class="lb-wins">779</span>
+        <span class="lb-streak">🔥 ×7</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank" style="color:var(--muted)">4</span>
+        <span class="lb-player">x0r_dev <small>CHALLENGER · USA</small></span>
+        <span class="lb-elo">3,104</span>
+        <span class="lb-wins">641</span>
+        <span class="lb-streak">×3</span>
+      </div>
+      <div class="lb-row">
+        <span class="lb-rank" style="color:var(--muted)">5</span>
+        <span class="lb-player">bytehero <small>CHALLENGER · India</small></span>
+        <span class="lb-elo">3,098</span>
+        <span class="lb-wins">618</span>
+        <span class="lb-streak">×5</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="bg-text">CLASH</div>
+    <h2>READY TO<br>PROVE YOURSELF?</h2>
+    <p>Join 42,000 developers battling daily. Your first match is one click away.</p>
+    <div class="cta-actions">
+      <a href="/lobby" class="btn-primary">START BATTLING →</a>
+      <a href="#how" class="btn-secondary">WATCH DEMO</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">CODE<span>CLASH</span></div>
+    <p>© 2026 CODECLASH. ALL RIGHTS RESERVED.</p>
+    <nav>
+      <ul>
+        <li><a href="#">TERMS</a></li>
+        <li><a href="#">PRIVACY</a></li>
+        <li><a href="#">API</a></li>
+        <li><a href="#">DISCORD</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+
+</html>
