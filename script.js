@@ -171,7 +171,7 @@ socket.on('roomCreated', (roomId) => {
     switchView('waiting');
 });
 
-socket.on('roundStart', ({ players, timeRemaining: tr, currentRound, totalRounds, question }) => {
+socket.on('roundStart', ({ players, timeRemaining: tr, currentRound, totalRounds, question, language }) => {
     timeRemaining = tr;
     currentScore = 1500;
     matchActive = true;
@@ -179,6 +179,13 @@ socket.on('roundStart', ({ players, timeRemaining: tr, currentRound, totalRounds
 
     if (roundHeaderEl) roundHeaderEl.innerText = `Round ${currentRound}/${totalRounds}`;
     if (problemTitleEl) problemTitleEl.innerText = question.title;
+
+    const editorFilenameEl = document.getElementById('editor-filename');
+    if (editorFilenameEl) {
+        if (language === 'cpp') editorFilenameEl.innerText = 'main.cpp';
+        else if (language === 'c') editorFilenameEl.innerText = 'main.c';
+        else editorFilenameEl.innerText = 'main.py';
+    }
     if (problemDiffEl) {
         problemDiffEl.innerText = question.difficulty;
         problemDiffEl.className = `difficulty ${question.difficulty.toLowerCase()}`;
@@ -281,6 +288,16 @@ socket.on('evaluationResult', (data) => {
 
 // ---- LOBBY LOGIC ----
 
+let selectedLang = 'python';
+const langBtns = document.querySelectorAll('.lang-btn');
+langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedLang = btn.dataset.lang;
+    });
+});
+
 createRoomBtn.addEventListener('click', () => {
     myName = createNameInput.value.trim();
     if (myName === '') {
@@ -291,7 +308,7 @@ createRoomBtn.addEventListener('click', () => {
     const roomId = Math.random().toString(36).substring(2, 8).toUpperCase();
     const rounds = createRoundsSelect.value;
     const difficulty = createDiffSelect.value;
-    socket.emit('createRoom', { name: myName, roomId, rounds, difficulty });
+    socket.emit('createRoom', { name: myName, roomId, rounds, difficulty, language: selectedLang });
 });
 
 if (copyBtn) copyBtn.addEventListener('click', () => {

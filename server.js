@@ -25,10 +25,14 @@ app.use(express.static(__dirname));
 // (requires moved to top)
 
 let questionsDB = {};
+let questionsCppDB = {};
+let questionsCDB = {};
 try {
     questionsDB = JSON.parse(fs.readFileSync(path.join(__dirname, 'questions.json'), 'utf8'));
+    questionsCppDB = JSON.parse(fs.readFileSync(path.join(__dirname, 'questions_cpp.json'), 'utf8'));
+    questionsCDB = JSON.parse(fs.readFileSync(path.join(__dirname, 'questions_c.json'), 'utf8'));
 } catch (e) {
-    console.error("Could not load questions.json", e);
+    console.error("Could not load question databases", e);
 }
 
 // Room Data
@@ -36,8 +40,12 @@ try {
 const rooms = {};
 
 // Helper: Get random questions
-function getRandomQuestions(difficulty, count) {
-    const pool = questionsDB[difficulty] || questionsDB['Easy'];
+function getRandomQuestions(difficulty, count, language) {
+    let db = questionsDB;
+    if (language === 'cpp') db = questionsCppDB;
+    if (language === 'c') db = questionsCDB;
+
+    const pool = db[difficulty] || db['Easy'];
     if (!pool || pool.length === 0) return null;
 
     // Shuffle and pick
@@ -49,10 +57,11 @@ io.on('connection', (socket) => {
     console.log('A user connected:', socket.id);
 
     // Create Room
-    socket.on('createRoom', ({ name, roomId, rounds, difficulty }) => {
+    socket.on('createRoom', ({ name, roomId, rounds, difficulty, language }) => {
         let parsedRounds = parseInt(rounds) || 1;
+        const lang = language || 'python';
 
-        const qList = getRandomQuestions(difficulty, parsedRounds);
+        const qList = getRandomQuestions(difficulty, parsedRounds, lang);
         if (!qList) {
             socket.emit('errorMsg', 'Server Error: Question Database not found or failed to load on Render.');
             return;
@@ -64,6 +73,7 @@ io.on('connection', (socket) => {
             currentRound: 0,
             questions: qList,
             difficulty: difficulty,
+            language: lang,
             matchActive: false,
             timeRemaining: 900 // 15 mins
         };
@@ -157,40 +167,94 @@ io.on('connection', (socket) => {
         }
     });
 
-    // Server Side Python Execution
+    // Server Side Execution
     socket.on('evaluateCode', ({ userCode }) => {
         const roomId = socket.roomId;
         if (!roomId || !rooms[roomId] || !rooms[roomId].matchActive) return;
 
         const qIndex = rooms[roomId].currentRound;
         const question = rooms[roomId].questions[qIndex];
+        const lang = rooms[roomId].language || 'python';
         if (!question) return;
 
-        // 1. Write temp python file combining user code + our validations
-        const pyContent = userCode + "\n\n" + question.validation;
-        const tempName = path.join(__dirname, `code_${socket.id}.py`);
+        if (lang === 'python') {
+            const pyContent = userCode + "\n\n" + question.validation;
+            const tempName = path.join(__dirname, `code_${socket.id}.py`);
 
-        fs.writeFile(tempName, pyContent, (err) => {
-            if (err) {
-                return socket.emit('evaluationResult', { success: false, error: 'Server Error writing file.' });
-            }
+            fs.writeFile(tempName, pyContent, (err) => {
+                if (err) return socket.emit('evaluationResult', { success: false, error: 'Server Error writing file.' });
 
-            // 2. Execute it via Child Process securely
-            // Timeout to prevent infinite loops giving it 2 seconds max
-            exec(`python "${tempName}"`, { timeout: 2000 }, (error, stdout, stderr) => {
-                // 3. Cleanup temp file
-                fs.unlink(tempName, () => { });
-
-                if (error || stderr) {
-                    const failMsg = (stderr || error.message).trim();
-                    socket.emit('evaluationResult', { success: false, error: failMsg });
-                } else if (stdout.includes('Passed')) {
-                    socket.emit('evaluationResult', { success: true, stdout: stdout.trim() });
-                } else {
-                    socket.emit('evaluationResult', { success: false, error: 'Test cases failed or no output.' });
-                }
+                exec(`python "${tempName}"`, { timeout: 2000 }, (error, stdout, stderr) => {
+                    fs.unlink(tempName, () => { });
+                    if (error || stderr) {
+                        socket.emit('evaluationResult', { success: false, error: (stderr || error.message).trim() });
+                    } else if (stdout.includes('Passed')) {
+                        socket.emit('evaluationResult', { success: true, stdout: stdout.trim() });
+                    } else {
+                        socket.emit('evaluationResult', { success: false, error: 'Test cases failed or no output.' });
+                    }
+                });
             });
-        });
+        } else if (lang === 'cpp') {
+            const cppContent = question.validation.replace("// -- USER CODE INJECTED HERE --", userCode);
+            const tempSrc = path.join(__dirname, `code_${socket.id}.cpp`);
+            // Ext is .exe to support native Windows Node execution
+            const tempExe = path.join(__dirname, `code_${socket.id}.exe`);
+
+            fs.writeFile(tempSrc, cppContent, (err) => {
+                if (err) return socket.emit('evaluationResult', { success: false, error: 'Server Error writing CPP file.' });
+
+                // Compile and execute C++. 3 seconds max timeout.
+                exec(`g++ "${tempSrc}" -o "${tempExe}" && "${tempExe}"`, { timeout: 3000 }, (error, stdout, stderr) => {
+                    fs.unlink(tempSrc, () => { });
+                    fs.unlink(tempExe, () => { }); // Ignore deletion errors if it didn't compile
+
+                    if (error || stderr) {
+                        // We will slice out messy compiler file paths to make it cleaner for the user
+                        let errText = (stderr || error.message).toString();
+                        if (errText.includes('code_')) {
+                            errText = errText.substring(errText.indexOf('code_')).split(':').slice(1).join(':').trim();
+                        }
+
+                        // Assertion failure handler
+                        if (errText.includes('Assertion') && errText.includes('failed')) {
+                            errText = "Test Case Failed: " + errText.substring(errText.indexOf('Assertion'));
+                        }
+
+                        socket.emit('evaluationResult', { success: false, error: errText.substring(0, 500) });
+                    } else if (stdout.includes('Passed')) {
+                        socket.emit('evaluationResult', { success: true, stdout: stdout.trim() });
+                    } else {
+                        socket.emit('evaluationResult', { success: false, error: 'Test cases failed or no output.' });
+                    }
+                });
+            });
+        } else if (lang === 'c') {
+            const cContent = question.validation.replace("// -- USER CODE INJECTED HERE --", userCode);
+            const tempSrc = path.join(__dirname, `code_${socket.id}.c`);
+            const tempExe = path.join(__dirname, `code_${socket.id}_c.exe`);
+
+            fs.writeFile(tempSrc, cContent, (err) => {
+                if (err) return socket.emit('evaluationResult', { success: false, error: 'Server Error writing C file.' });
+
+                // Compile and execute C. 3 seconds max timeout.
+                exec(`gcc "${tempSrc}" -o "${tempExe}" && "${tempExe}"`, { timeout: 3000 }, (error, stdout, stderr) => {
+                    fs.unlink(tempSrc, () => { });
+                    fs.unlink(tempExe, () => { });
+
+                    if (error || stderr) {
+                        let errText = (stderr || error.message).toString();
+                        if (errText.includes('code_')) errText = errText.substring(errText.indexOf('code_')).split(':').slice(1).join(':').trim();
+                        if (errText.includes('Assertion') && errText.includes('failed')) errText = "Test Case Failed: " + errText.substring(errText.indexOf('Assertion'));
+                        socket.emit('evaluationResult', { success: false, error: errText.substring(0, 500) });
+                    } else if (stdout.includes('Passed')) {
+                        socket.emit('evaluationResult', { success: true, stdout: stdout.trim() });
+                    } else {
+                        socket.emit('evaluationResult', { success: false, error: 'Test cases failed or no output.' });
+                    }
+                });
+            });
+        }
     });
 
     // Handle Disconnect

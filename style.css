@@ -229,6 +229,37 @@ h3 {
     color: white;
 }
 
+.lang-toggle {
+    display: flex;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.lang-btn {
+    flex: 1;
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.lang-btn:hover {
+    color: white;
+}
+
+.lang-btn.active {
+    background: var(--accent-blue-dim);
+    color: var(--accent-blue);
+}
+
 .divider {
     display: flex;
     align-items: center;

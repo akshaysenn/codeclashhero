@@ -26,13 +26,18 @@
                         <h3>Create a Room</h3>
                         <p>Host a match and invite an opponent.</p>
                         <input type="text" id="create-name-input" placeholder="Your Name" autocomplete="off">
+                        <div class="lang-toggle mt-2" id="create-lang-toggle">
+                            <button class="lang-btn active" data-lang="python">Python</button>
+                            <button class="lang-btn" data-lang="cpp">C++</button>
+                            <button class="lang-btn" data-lang="c">C</button>
+                        </div>
                         <div class="form-row mt-2" style="display: flex; gap: 10px;">
-                            <select id="create-rounds-select" class="form-select">
+                            <select id="create-rounds-select" class="form-select" style="flex: 1;">
                                 <option value="1">1 Round</option>
                                 <option value="3" selected>3 Rounds</option>
                                 <option value="5">5 Rounds</option>
                             </select>
-                            <select id="create-diff-select" class="form-select">
+                            <select id="create-diff-select" class="form-select" style="flex: 1;">
                                 <option value="Easy">Easy</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Hard">Hard</option>
@@ -109,7 +114,7 @@
 
                 <section class="editor-panel">
                     <div class="panel-header">
-                        <span>main.py</span>
+                        <span id="editor-filename">main.py</span>
                     </div>
                     <div class="editor-container">
                         <div id="line-numbers" class="line-numbers">1</div>

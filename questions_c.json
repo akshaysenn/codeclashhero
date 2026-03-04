@@ -1,0 +1,512 @@
+{
+  "Easy": [
+    {
+      "title": "Two Sum",
+      "difficulty": "Easy",
+      "desc": "Given an array of integers nums, return a dynamic array of two indices such that their elements add up to target.",
+      "examples": "<strong>Example 1:</strong><br>Test: eq_arr(two_sum((int[]){2,7,11,15}, 4, 9), (int[]){0, 1}, 2)<br><br><strong>Example 2:</strong><br>Test: eq_arr(two_sum((int[]){3,2,4}, 3, 6), (int[]){1, 2}, 2)<br><br>",
+      "template": "int* two_sum(int* nums, int numsSize, int target) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(eq_arr(two_sum((int[]){2,7,11,15}, 4, 9), (int[]){0, 1}, 2));\n    assert(eq_arr(two_sum((int[]){3,2,4}, 3, 6), (int[]){1, 2}, 2));\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Palindrome Number",
+      "difficulty": "Easy",
+      "desc": "Given an integer x, return true if x is a palindrome, and false otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_palindrome(121)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_palindrome(-121)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_palindrome(int x) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_palindrome(121) == true);\n    assert(is_palindrome(-121) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Reverse String",
+      "difficulty": "Easy",
+      "desc": "Write a function that reverses a string.",
+      "examples": "<strong>Example 1:</strong><br>Test: eq_str(reverse_string(strdup(\"hello\")), \"olleh\")<br><br><strong>Example 2:</strong><br>Test: eq_str(reverse_string(strdup(\"abcd\")), \"dcba\")<br><br>",
+      "template": "char* reverse_string(char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(eq_str(reverse_string(strdup(\"hello\")), \"olleh\"));\n    assert(eq_str(reverse_string(strdup(\"abcd\")), \"dcba\"));\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Sum Array",
+      "difficulty": "Easy",
+      "desc": "Return the sum of all elements in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sum_array((int[]){1,2,3}, 3)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>sum_array((int[]){-1, 1}, 2)</code><br>Output: <code>0</code><br><br>",
+      "template": "int sum_array(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(sum_array((int[]){1,2,3}, 3) == 6);\n    assert(sum_array((int[]){-1, 1}, 2) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Find Maximum",
+      "difficulty": "Easy",
+      "desc": "Return the largest number in the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_max((int[]){1,5,3}, 3)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>find_max((int[]){-10,-5}, 2)</code><br>Output: <code>-5</code><br><br>",
+      "template": "int find_max(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(find_max((int[]){1,5,3}, 3) == 5);\n    assert(find_max((int[]){-10,-5}, 2) == -5);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Find Minimum",
+      "difficulty": "Easy",
+      "desc": "Return the smallest number in the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_min((int[]){1,5,3}, 3)</code><br>Output: <code>1</code><br><br><strong>Example 2:</strong><br>Input: <code>find_min((int[]){-10,-5}, 2)</code><br>Output: <code>-10</code><br><br>",
+      "template": "int find_min(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(find_min((int[]){1,5,3}, 3) == 1);\n    assert(find_min((int[]){-10,-5}, 2) == -10);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Count Vowels",
+      "difficulty": "Easy",
+      "desc": "Count the number of vowels (a,e,i,o,u) in a string.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_vowels(\"hello\")</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_vowels(\"apple\")</code><br>Output: <code>2</code><br><br>",
+      "template": "int count_vowels(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(count_vowels(\"hello\") == 2);\n    assert(count_vowels(\"apple\") == 2);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Is Even",
+      "difficulty": "Easy",
+      "desc": "Return True if n is even, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_even(4)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_even(7)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_even(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_even(4) == true);\n    assert(is_even(7) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Is Odd",
+      "difficulty": "Easy",
+      "desc": "Return True if n is odd, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_odd(5)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_odd(2)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_odd(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_odd(5) == true);\n    assert(is_odd(2) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Factorial",
+      "difficulty": "Easy",
+      "desc": "Return the factorial of n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>factorial(5)</code><br>Output: <code>120</code><br><br><strong>Example 2:</strong><br>Input: <code>factorial(3)</code><br>Output: <code>6</code><br><br>",
+      "template": "int factorial(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(factorial(5) == 120);\n    assert(factorial(3) == 6);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Fibonacci",
+      "difficulty": "Easy",
+      "desc": "Return the n-th Fibonacci number (n=0 returns 0, n=1 returns 1).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>fibonacci(5)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>fibonacci(7)</code><br>Output: <code>13</code><br><br>",
+      "template": "int fibonacci(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(fibonacci(5) == 5);\n    assert(fibonacci(7) == 13);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "GCD",
+      "difficulty": "Easy",
+      "desc": "Return the greatest common divisor of a and b.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>gcd(12, 8)</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>gcd(7, 3)</code><br>Output: <code>1</code><br><br>",
+      "template": "int gcd(int a, int b) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(gcd(12, 8) == 4);\n    assert(gcd(7, 3) == 1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Check Prime",
+      "difficulty": "Easy",
+      "desc": "Return True if n is a prime number, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_prime(7)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_prime(10)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_prime(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_prime(7) == true);\n    assert(is_prime(10) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Sum of Digits",
+      "difficulty": "Easy",
+      "desc": "Return the sum of the digits of a positive integer n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>sum_digits(123)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>sum_digits(405)</code><br>Output: <code>9</code><br><br>",
+      "template": "int sum_digits(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(sum_digits(123) == 6);\n    assert(sum_digits(405) == 9);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Reverse Digits",
+      "difficulty": "Easy",
+      "desc": "Reverse the digits of a number. (Assume positive)",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>reverse_digits(123)</code><br>Output: <code>321</code><br><br><strong>Example 2:</strong><br>Input: <code>reverse_digits(400)</code><br>Output: <code>4</code><br><br>",
+      "template": "int reverse_digits(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(reverse_digits(123) == 321);\n    assert(reverse_digits(400) == 4);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Count Set Bits",
+      "difficulty": "Easy",
+      "desc": "Count the number of 1s in the binary representation of n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_bits(5)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_bits(7)</code><br>Output: <code>3</code><br><br>",
+      "template": "int count_bits(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(count_bits(5) == 2);\n    assert(count_bits(7) == 3);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "FizzBuzz",
+      "difficulty": "Easy",
+      "desc": "Return 'Fizz' if n is divisible by 3, 'Buzz' if by 5, 'FizzBuzz' if both, else return a string representation of n.",
+      "examples": "<strong>Example 1:</strong><br>Test: eq_str(fizz_buzz(15), \"FizzBuzz\")<br><br><strong>Example 2:</strong><br>Test: eq_str(fizz_buzz(3), \"Fizz\")<br><br>",
+      "template": "char* fizz_buzz(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(eq_str(fizz_buzz(15), \"FizzBuzz\"));\n    assert(eq_str(fizz_buzz(3), \"Fizz\"));\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Leap Year",
+      "difficulty": "Easy",
+      "desc": "Return True if year is a leap year, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_leap(2020)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_leap(2021)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_leap(int year) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_leap(2020) == true);\n    assert(is_leap(2021) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "String Length",
+      "difficulty": "Easy",
+      "desc": "Return the length of the string.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>string_len(\"hello\")</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>string_len(\"\")</code><br>Output: <code>0</code><br><br>",
+      "template": "int string_len(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(string_len(\"hello\") == 5);\n    assert(string_len(\"\") == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Count Consonants",
+      "difficulty": "Easy",
+      "desc": "Count consonants in a string (letters that are not vowels).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_consonants(\"hello\")</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>count_consonants(\"world\")</code><br>Output: <code>4</code><br><br>",
+      "template": "int count_consonants(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(count_consonants(\"hello\") == 3);\n    assert(count_consonants(\"world\") == 4);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Square Root",
+      "difficulty": "Easy",
+      "desc": "Return the integer part of the square root of n.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>int_sqrt(9)</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>int_sqrt(15)</code><br>Output: <code>3</code><br><br>",
+      "template": "int int_sqrt(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(int_sqrt(9) == 3);\n    assert(int_sqrt(15) == 3);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Power of Two",
+      "difficulty": "Easy",
+      "desc": "Return True if n is a power of two, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_power_of_two(16)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_power_of_two(14)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_power_of_two(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_power_of_two(16) == true);\n    assert(is_power_of_two(14) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Remove Spaces",
+      "difficulty": "Easy",
+      "desc": "Return a new string with all spaces removed.",
+      "examples": "<strong>Example 1:</strong><br>Test: eq_str(remove_spaces(\"a b c\"), \"abc\")<br><br><strong>Example 2:</strong><br>Test: eq_str(remove_spaces(\" x \"), \"x\")<br><br>",
+      "template": "char* remove_spaces(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(eq_str(remove_spaces(\"a b c\"), \"abc\"));\n    assert(eq_str(remove_spaces(\" x \"), \"x\"));\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Anagram Check",
+      "difficulty": "Easy",
+      "desc": "Return True if s1 is an anagram of s2.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_anagram(\"listen\", \"silent\")</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_anagram(\"hello\", \"world\")</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_anagram(const char* s1, const char* s2) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_anagram(\"listen\", \"silent\") == true);\n    assert(is_anagram(\"hello\", \"world\") == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "First Element",
+      "difficulty": "Easy",
+      "desc": "Return the first element of the array. If empty, return -1.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>first_element((int[]){5,2}, 2)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>first_element(NULL, 0)</code><br>Output: <code>-1</code><br><br>",
+      "template": "int first_element(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(first_element((int[]){5,2}, 2) == 5);\n    assert(first_element(NULL, 0) == -1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Last Element",
+      "difficulty": "Easy",
+      "desc": "Return the last element of the array. If empty, return -1.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>last_element((int[]){5,2}, 2)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>last_element(NULL, 0)</code><br>Output: <code>-1</code><br><br>",
+      "template": "int last_element(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(last_element((int[]){5,2}, 2) == 2);\n    assert(last_element(NULL, 0) == -1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Average",
+      "difficulty": "Easy",
+      "desc": "Return the average of the array of numbers. If empty, return 0.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>average((int[]){1,2,3}, 3)</code><br>Output: <code>2.0</code><br><br><strong>Example 2:</strong><br>Input: <code>average(NULL, 0)</code><br>Output: <code>0</code><br><br>",
+      "template": "double average(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(average((int[]){1,2,3}, 3) == 2.0);\n    assert(average(NULL, 0) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Celsius to Fahrenheit",
+      "difficulty": "Easy",
+      "desc": "Convert Celsius temperature to Fahrenheit (F = C * 9/5 + 32).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>c_to_f(0)</code><br>Output: <code>32</code><br><br><strong>Example 2:</strong><br>Input: <code>c_to_f(100)</code><br>Output: <code>212</code><br><br>",
+      "template": "int c_to_f(int c) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(c_to_f(0) == 32);\n    assert(c_to_f(100) == 212);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Fahrenheit to Celsius",
+      "difficulty": "Easy",
+      "desc": "Convert Fahrenheit to Celsius (C = (F - 32) * 5/9).",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>f_to_c(32)</code><br>Output: <code>0</code><br><br><strong>Example 2:</strong><br>Input: <code>f_to_c(212)</code><br>Output: <code>100</code><br><br>",
+      "template": "int f_to_c(int f) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(f_to_c(32) == 0);\n    assert(f_to_c(212) == 100);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Multiply Elements",
+      "difficulty": "Easy",
+      "desc": "Return the product of all elements in the array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>product_array((int[]){1,2,3,4}, 4)</code><br>Output: <code>24</code><br><br><strong>Example 2:</strong><br>Input: <code>product_array((int[]){1,0,5}, 3)</code><br>Output: <code>0</code><br><br>",
+      "template": "int product_array(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(product_array((int[]){1,2,3,4}, 4) == 24);\n    assert(product_array((int[]){1,0,5}, 3) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Count Occurrences",
+      "difficulty": "Easy",
+      "desc": "Return the number of times target appears in arr.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_target((int[]){1,2,2,3}, 4, 2)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_target((int[]){1,1}, 2, 3)</code><br>Output: <code>0</code><br><br>",
+      "template": "int count_target(int* arr, int size, int target) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(count_target((int[]){1,2,2,3}, 4, 2) == 2);\n    assert(count_target((int[]){1,1}, 2, 3) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Absolute Difference",
+      "difficulty": "Easy",
+      "desc": "Return the absolute difference between a and b.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>abs_diff(5, 10)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>abs_diff(10, 5)</code><br>Output: <code>5</code><br><br>",
+      "template": "int abs_diff(int a, int b) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(abs_diff(5, 10) == 5);\n    assert(abs_diff(10, 5) == 5);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Is Divisible",
+      "difficulty": "Easy",
+      "desc": "Return True if a is divisible by b, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_divisible(10, 2)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_divisible(10, 3)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_divisible(int a, int b) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_divisible(10, 2) == true);\n    assert(is_divisible(10, 3) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "String to Int",
+      "difficulty": "Easy",
+      "desc": "Convert string to integer.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>str_to_int(\"123\")</code><br>Output: <code>123</code><br><br><strong>Example 2:</strong><br>Input: <code>str_to_int(\"-5\")</code><br>Output: <code>-5</code><br><br>",
+      "template": "int str_to_int(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(str_to_int(\"123\") == 123);\n    assert(str_to_int(\"-5\") == -5);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Int to String",
+      "difficulty": "Easy",
+      "desc": "Convert integer to string (dynamically allocated).",
+      "examples": "<strong>Example 1:</strong><br>Test: eq_str(int_to_str(123), \"123\")<br><br><strong>Example 2:</strong><br>Test: eq_str(int_to_str(-5), \"-5\")<br><br>",
+      "template": "char* int_to_str(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(eq_str(int_to_str(123), \"123\"));\n    assert(eq_str(int_to_str(-5), \"-5\"));\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Count Evens",
+      "difficulty": "Easy",
+      "desc": "Return the number of even numbers in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_evens((int[]){1,2,3,4}, 4)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_evens((int[]){1,3,5}, 3)</code><br>Output: <code>0</code><br><br>",
+      "template": "int count_evens(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(count_evens((int[]){1,2,3,4}, 4) == 2);\n    assert(count_evens((int[]){1,3,5}, 3) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Count Odds",
+      "difficulty": "Easy",
+      "desc": "Return the number of odd numbers in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>count_odds((int[]){1,2,3,4}, 4)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>count_odds((int[]){2,4,6}, 3)</code><br>Output: <code>0</code><br><br>",
+      "template": "int count_odds(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(count_odds((int[]){1,2,3,4}, 4) == 2);\n    assert(count_odds((int[]){2,4,6}, 3) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Add One",
+      "difficulty": "Easy",
+      "desc": "Add 1 to the given number.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>add_one(5)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>add_one(-1)</code><br>Output: <code>0</code><br><br>",
+      "template": "int add_one(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(add_one(5) == 6);\n    assert(add_one(-1) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Double",
+      "difficulty": "Easy",
+      "desc": "Return the number multiplied by 2.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>double_n(4)</code><br>Output: <code>8</code><br><br><strong>Example 2:</strong><br>Input: <code>double_n(0)</code><br>Output: <code>0</code><br><br>",
+      "template": "int double_n(int n) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(double_n(4) == 8);\n    assert(double_n(0) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Contains Substring",
+      "difficulty": "Easy",
+      "desc": "Return True if sub is present in s.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>contains_sub(\"hello\", \"ell\")</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>contains_sub(\"hello\", \"world\")</code><br>Output: <code>false</code><br><br>",
+      "template": "bool contains_sub(const char* s, const char* sub) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(contains_sub(\"hello\", \"ell\") == true);\n    assert(contains_sub(\"hello\", \"world\") == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    }
+  ],
+  "Medium": [
+    {
+      "title": "Reverse Int",
+      "difficulty": "Medium",
+      "desc": "Reverse the digits of a signed integer. (Return 0 on overflow normally, here assume standard 32-bit)",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>reverse_int(123)</code><br>Output: <code>321</code><br><br><strong>Example 2:</strong><br>Input: <code>reverse_int(-123)</code><br>Output: <code>-321</code><br><br>",
+      "template": "int reverse_int(int x) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(reverse_int(123) == 321);\n    assert(reverse_int(-123) == -321);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Valid Parentheses",
+      "difficulty": "Medium",
+      "desc": "Given a string of '()', '{}', '[]', return True if closed properly.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_valid_brackets(\"()[]{}\")</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>is_valid_brackets(\"([)]\")</code><br>Output: <code>false</code><br><br>",
+      "template": "bool is_valid_brackets(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_valid_brackets(\"()[]{}\") == true);\n    assert(is_valid_brackets(\"([)]\") == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Find Peak Element",
+      "difficulty": "Medium",
+      "desc": "Find a peak element in an array and return its index.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_peak((int[]){1,2,3,1}, 4)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>find_peak((int[]){1}, 1)</code><br>Output: <code>0</code><br><br>",
+      "template": "int find_peak(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(find_peak((int[]){1,2,3,1}, 4) == 2);\n    assert(find_peak((int[]){1}, 1) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Sort Colors",
+      "difficulty": "Medium",
+      "desc": "Given an array of 0s, 1s, and 2s, sort them in-place.",
+      "examples": "<strong>Example 1:</strong><br>Test: ({ int temp[] = {2,0,2,1,1,0}; sort_colors(temp, 6); eq_arr(temp, (int[]){0,0,1,1,2,2}, 6); })<br><br><strong>Example 2:</strong><br>Test: ({ int temp[] = {2,0,1}; sort_colors(temp, 3); eq_arr(temp, (int[]){0,1,2}, 3); })<br><br>",
+      "template": "void sort_colors(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(({ int temp[] = {2,0,2,1,1,0}; sort_colors(temp, 6); eq_arr(temp, (int[]){0,0,1,1,2,2}, 6); }));\n    assert(({ int temp[] = {2,0,1}; sort_colors(temp, 3); eq_arr(temp, (int[]){0,1,2}, 3); }));\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Kth Largest",
+      "difficulty": "Medium",
+      "desc": "Find the kth largest element in an array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>kth_largest((int[]){3,2,1,5,6,4}, 6, 2)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>kth_largest((int[]){3,2,3,1,2,4,5,5,6}, 9, 4)</code><br>Output: <code>4</code><br><br>",
+      "template": "int kth_largest(int* arr, int size, int k) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(kth_largest((int[]){3,2,1,5,6,4}, 6, 2) == 5);\n    assert(kth_largest((int[]){3,2,3,1,2,4,5,5,6}, 9, 4) == 4);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Longest Unique Substring",
+      "difficulty": "Medium",
+      "desc": "Find the length of the longest substring without repeating characters.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>longest_unique_sub(\"abcabcbb\")</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>longest_unique_sub(\"bbbbb\")</code><br>Output: <code>1</code><br><br>",
+      "template": "int longest_unique_sub(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(longest_unique_sub(\"abcabcbb\") == 3);\n    assert(longest_unique_sub(\"bbbbb\") == 1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Container With Most Water",
+      "difficulty": "Medium",
+      "desc": "Find max area.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>max_area((int[]){1,8,6,2,5,4,8,3,7}, 9)</code><br>Output: <code>49</code><br><br><strong>Example 2:</strong><br>Input: <code>max_area((int[]){1,1}, 2)</code><br>Output: <code>1</code><br><br>",
+      "template": "int max_area(int* heights, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(max_area((int[]){1,8,6,2,5,4,8,3,7}, 9) == 49);\n    assert(max_area((int[]){1,1}, 2) == 1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Coin Change",
+      "difficulty": "Medium",
+      "desc": "Return the fewest number of coins to make up an amount, or -1 if impossible.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>coin_change((int[]){1,2,5}, 3, 11)</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>coin_change((int[]){2}, 1, 3)</code><br>Output: <code>-1</code><br><br>",
+      "template": "int coin_change(int* coins, int size, int amount) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(coin_change((int[]){1,2,5}, 3, 11) == 3);\n    assert(coin_change((int[]){2}, 1, 3) == -1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Jump Game",
+      "difficulty": "Medium",
+      "desc": "Return True if you can reach the last index of the array, False otherwise.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>can_jump((int[]){2,3,1,1,4}, 5)</code><br>Output: <code>true</code><br><br><strong>Example 2:</strong><br>Input: <code>can_jump((int[]){3,2,1,0,4}, 5)</code><br>Output: <code>false</code><br><br>",
+      "template": "bool can_jump(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(can_jump((int[]){2,3,1,1,4}, 5) == true);\n    assert(can_jump((int[]){3,2,1,0,4}, 5) == false);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Search in Rotated Array",
+      "difficulty": "Medium",
+      "desc": "Find target in a rotated sorted array. Return index or -1.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>search_rotated((int[]){4,5,6,7,0,1,2}, 7, 0)</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>search_rotated((int[]){4,5,6,7,0,1,2}, 7, 3)</code><br>Output: <code>-1</code><br><br>",
+      "template": "int search_rotated(int* arr, int size, int target) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(search_rotated((int[]){4,5,6,7,0,1,2}, 7, 0) == 4);\n    assert(search_rotated((int[]){4,5,6,7,0,1,2}, 7, 3) == -1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Longest Increasing Subsequence",
+      "difficulty": "Medium",
+      "desc": "Return the length of the longest strictly increasing subsequence.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>length_of_lis((int[]){10,9,2,5,3,7,101,18}, 8)</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>length_of_lis((int[]){7,7,7,7}, 4)</code><br>Output: <code>1</code><br><br>",
+      "template": "int length_of_lis(int* arr, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(length_of_lis((int[]){10,9,2,5,3,7,101,18}, 8) == 4);\n    assert(length_of_lis((int[]){7,7,7,7}, 4) == 1);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "House Robber",
+      "difficulty": "Medium",
+      "desc": "Determine max money you can rob without robbing adjacent houses.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>rob((int[]){1,2,3,1}, 4)</code><br>Output: <code>4</code><br><br><strong>Example 2:</strong><br>Input: <code>rob((int[]){2,7,9,3,1}, 5)</code><br>Output: <code>12</code><br><br>",
+      "template": "int rob(int* nums, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(rob((int[]){1,2,3,1}, 4) == 4);\n    assert(rob((int[]){2,7,9,3,1}, 5) == 12);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Find Duplicate Number",
+      "difficulty": "Medium",
+      "desc": "Given an array of size n+1 with integers in [1,n], return the one repeated number.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>find_duplicate((int[]){1,3,4,2,2}, 5)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>find_duplicate((int[]){3,1,3,4,2}, 5)</code><br>Output: <code>3</code><br><br>",
+      "template": "int find_duplicate(int* nums, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(find_duplicate((int[]){1,3,4,2,2}, 5) == 2);\n    assert(find_duplicate((int[]){3,1,3,4,2}, 5) == 3);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Subarray Sum K",
+      "difficulty": "Medium",
+      "desc": "Return the total number of continuous subarrays whose sum equals k.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>subarray_sum((int[]){1,1,1}, 3, 2)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>subarray_sum((int[]){1,2,3}, 3, 3)</code><br>Output: <code>2</code><br><br>",
+      "template": "int subarray_sum(int* nums, int size, int k) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(subarray_sum((int[]){1,1,1}, 3, 2) == 2);\n    assert(subarray_sum((int[]){1,2,3}, 3, 3) == 2);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Max Product Subarray",
+      "difficulty": "Medium",
+      "desc": "Find the contiguous subarray with the largest product.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>max_product((int[]){2,3,-2,4}, 4)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>max_product((int[]){-2,0,-1}, 3)</code><br>Output: <code>0</code><br><br>",
+      "template": "int max_product(int* nums, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(max_product((int[]){2,3,-2,4}, 4) == 6);\n    assert(max_product((int[]){-2,0,-1}, 3) == 0);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    }
+  ],
+  "Hard": [
+    {
+      "title": "First Missing Positive",
+      "difficulty": "Hard",
+      "desc": "Return the smallest missing positive integer in an unsorted array.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>first_missing_pos((int[]){1,2,0}, 3)</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>first_missing_pos((int[]){3,4,-1,1}, 4)</code><br>Output: <code>2</code><br><br>",
+      "template": "int first_missing_pos(int* nums, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(first_missing_pos((int[]){1,2,0}, 3) == 3);\n    assert(first_missing_pos((int[]){3,4,-1,1}, 4) == 2);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Trapping Rain Water",
+      "difficulty": "Hard",
+      "desc": "Given n non-negative integers representing an elevation map.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>trap((int[]){0,1,0,2,1,0,1,3,2,1,2,1}, 12)</code><br>Output: <code>6</code><br><br><strong>Example 2:</strong><br>Input: <code>trap((int[]){4,2,0,3,2,5}, 6)</code><br>Output: <code>9</code><br><br>",
+      "template": "int trap(int* heights, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(trap((int[]){0,1,0,2,1,0,1,3,2,1,2,1}, 12) == 6);\n    assert(trap((int[]){4,2,0,3,2,5}, 6) == 9);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Longest Valid Parentheses",
+      "difficulty": "Hard",
+      "desc": "Find the length of the longest valid well-formed parentheses substring.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>longest_valid(\"(()\")</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>longest_valid(\")()())\")</code><br>Output: <code>4</code><br><br>",
+      "template": "int longest_valid(const char* s) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(longest_valid(\"(()\") == 2);\n    assert(longest_valid(\")()())\") == 4);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Wildcard Matching",
+      "difficulty": "Hard",
+      "desc": "Implement wildcard pattern matching with '?' and '*'.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>is_match(\"aa\", \"a\")</code><br>Output: <code>false</code><br><br><strong>Example 2:</strong><br>Input: <code>is_match(\"aa\", \"*\")</code><br>Output: <code>true</code><br><br>",
+      "template": "bool is_match(const char* s, const char* p) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(is_match(\"aa\", \"a\") == false);\n    assert(is_match(\"aa\", \"*\") == true);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Jump Game II",
+      "difficulty": "Hard",
+      "desc": "Return the minimum number of jumps to reach the last index.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>jump((int[]){2,3,1,1,4}, 5)</code><br>Output: <code>2</code><br><br><strong>Example 2:</strong><br>Input: <code>jump((int[]){2,3,0,1,4}, 5)</code><br>Output: <code>2</code><br><br>",
+      "template": "int jump(int* nums, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(jump((int[]){2,3,1,1,4}, 5) == 2);\n    assert(jump((int[]){2,3,0,1,4}, 5) == 2);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Edit Distance",
+      "difficulty": "Hard",
+      "desc": "Return min operations to convert word1 to word2.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>min_distance(\"horse\", \"ros\")</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>min_distance(\"intention\", \"execution\")</code><br>Output: <code>5</code><br><br>",
+      "template": "int min_distance(const char* word1, const char* word2) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(min_distance(\"horse\", \"ros\") == 3);\n    assert(min_distance(\"intention\", \"execution\") == 5);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Distinct Subsequences",
+      "difficulty": "Hard",
+      "desc": "Return the number of distinct subsequences of s which equals t.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>num_distinct(\"rabbbit\", \"rabbit\")</code><br>Output: <code>3</code><br><br><strong>Example 2:</strong><br>Input: <code>num_distinct(\"babgbag\", \"bag\")</code><br>Output: <code>5</code><br><br>",
+      "template": "int num_distinct(const char* s, const char* t) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(num_distinct(\"rabbbit\", \"rabbit\") == 3);\n    assert(num_distinct(\"babgbag\", \"bag\") == 5);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    },
+    {
+      "title": "Candy",
+      "difficulty": "Hard",
+      "desc": "Return min candies to distribute based on ratings.",
+      "examples": "<strong>Example 1:</strong><br>Input: <code>candy((int[]){1,0,2}, 3)</code><br>Output: <code>5</code><br><br><strong>Example 2:</strong><br>Input: <code>candy((int[]){1,2,2}, 3)</code><br>Output: <code>4</code><br><br>",
+      "template": "int candy(int* ratings, int size) {\n    // Write your pure C code here\n    \n}",
+      "validation": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n#include <stdbool.h>\n#include <assert.h>\n#include <math.h>\n\n// Helper Macros for C assertions\n#define eq_str(a, b) (strcmp(a, b) == 0)\n#define eq_arr(a, b, len) ({ bool _res = true; for(int _i=0; _i<len; _i++) { if((a)[_i] != (b)[_i]) { _res = false; break; } } _res; })\n\n// -- USER CODE INJECTED HERE --\n\nint main() {\n    assert(candy((int[]){1,0,2}, 3) == 5);\n    assert(candy((int[]){1,2,2}, 3) == 4);\n    printf(\"Passed\\n\");\n    return 0;\n}"
+    }
+  ]
+}
