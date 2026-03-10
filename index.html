@@ -36,12 +36,18 @@
                                 <option value="1">1 Round</option>
                                 <option value="3" selected>3 Rounds</option>
                                 <option value="5">5 Rounds</option>
+                                <option value="10">10 Rounds</option>
+                                <option value="custom">Custom...</option>
                             </select>
                             <select id="create-diff-select" class="form-select" style="flex: 1;">
                                 <option value="Easy">Easy</option>
                                 <option value="Medium">Medium</option>
                                 <option value="Hard">Hard</option>
                             </select>
+                        </div>
+                        <div id="custom-rounds-wrapper" class="mt-2" style="display:none;">
+                            <input type="number" id="custom-rounds-input" class="form-input"
+                                placeholder="Enter number of rounds (1–50)" min="1" max="50" autocomplete="off">
                         </div>
                         <button id="create-room-btn" class="btn primary-btn mt-2">Create Room</button>
                     </div>

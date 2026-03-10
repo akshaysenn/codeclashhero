@@ -229,6 +229,29 @@ h3 {
     color: white;
 }
 
+.form-input {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    border-color: var(--accent-blue);
+}
+
+.form-input::-webkit-inner-spin-button,
+.form-input::-webkit-outer-spin-button {
+    opacity: 0.5;
+}
+
 .lang-toggle {
     display: flex;
     background: var(--bg-main);

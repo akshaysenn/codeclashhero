@@ -318,6 +318,18 @@ langBtns.forEach(btn => {
     });
 });
 
+// Custom rounds toggle
+const customRoundsWrapper = document.getElementById('custom-rounds-wrapper');
+const customRoundsInput = document.getElementById('custom-rounds-input');
+createRoundsSelect.addEventListener('change', () => {
+    if (createRoundsSelect.value === 'custom') {
+        customRoundsWrapper.style.display = 'block';
+        customRoundsInput.focus();
+    } else {
+        customRoundsWrapper.style.display = 'none';
+    }
+});
+
 createRoomBtn.addEventListener('click', () => {
     myName = createNameInput.value.trim();
     if (myName === '') {
@@ -325,8 +337,20 @@ createRoomBtn.addEventListener('click', () => {
         setTimeout(() => createNameInput.style.borderColor = 'var(--border-color)', 500);
         return;
     }
+
+    let rounds = createRoundsSelect.value;
+    if (rounds === 'custom') {
+        const custom = parseInt(customRoundsInput.value);
+        if (!custom || custom < 1 || custom > 50) {
+            customRoundsInput.style.borderColor = 'var(--accent-red)';
+            setTimeout(() => customRoundsInput.style.borderColor = 'var(--border-color)', 500);
+            customRoundsInput.focus();
+            return;
+        }
+        rounds = String(custom);
+    }
+
     const roomId = Math.random().toString(36).substring(2, 8).toUpperCase();
-    const rounds = createRoundsSelect.value;
     const difficulty = createDiffSelect.value;
     socket.emit('createRoom', { name: myName, roomId, rounds, difficulty, language: selectedLang });
 });
