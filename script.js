@@ -268,7 +268,27 @@ socket.on('evaluationResult', (data) => {
             consoleEl.className = 'output-console success';
         }
         socket.emit('statusUpdate', { text: 'Tests Passed!', color: 'var(--accent-green)' });
-        if (isSubmit) socket.emit('submitSuccess', { score: currentScore });
+        if (isSubmit) {
+            socket.emit('submitSuccess', { score: currentScore });
+
+            // 🎉 Confetti celebration burst
+            if (typeof confetti === 'function') {
+                const duration = 2000;
+                const end = Date.now() + duration;
+                const colors = ['#00d4ff', '#7fff00', '#ff00c8', '#ffd700', '#ffffff'];
+
+                (function burst() {
+                    confetti({
+                        particleCount: 60,
+                        spread: 70,
+                        origin: { x: Math.random() * 0.4 + 0.3, y: 0.5 },
+                        colors: colors,
+                        zIndex: 9999,
+                    });
+                    if (Date.now() < end) requestAnimationFrame(burst);
+                })();
+            }
+        }
     } else {
         if (consoleEl) {
             consoleEl.innerText = data.error || "Unknown Error";
