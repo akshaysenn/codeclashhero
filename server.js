@@ -1,28 +1,110 @@
+require('dotenv').config();
+
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const fs = require('fs');
 const { exec } = require('child_process');
 const path = require('path');
+const session = require('express-session');
+const SqliteStore = require('connect-sqlite3')(session);
+const passport = require('./auth');
+const db = require('./db');
+
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Landing page at root
+// ── SESSION (SQLite-backed) ──
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'codeclash_dev_secret',
+    resave: false,
+    saveUninitialized: false,
+    store: new SqliteStore({ db: 'sessions.db', dir: __dirname }),
+    cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 } // 7 days
+}));
+
+// ── PASSPORT ──
+app.use(passport.initialize());
+app.use(passport.session());
+
+// ── AUTH MIDDLEWARE ──
+function requireLogin(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login');
+}
+
+// ── ROUTES ──
+
+// Landing page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'codeclash.html'));
 });
 
-// Lobby / game app
-app.get('/lobby', (req, res) => {
+// Login page
+app.get('/login', (req, res) => {
+    if (req.isAuthenticated()) return res.redirect('/lobby');
+    res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+// Google OAuth — start
+app.get('/auth/google',
+    passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+// Google OAuth — callback
+app.get('/auth/google/callback',
+    passport.authenticate('google', { failureRedirect: '/login?error=true' }),
+    (req, res) => res.redirect('/lobby')
+);
+
+// Logout
+app.get('/auth/logout', (req, res, next) => {
+    req.logout(err => {
+        if (err) return next(err);
+        req.session.destroy(() => res.redirect('/'));
+    });
+});
+
+// API — current user (for frontend)
+app.get('/api/me', (req, res) => {
+    if (!req.isAuthenticated()) return res.status(401).json({ error: 'Not logged in' });
+    const { id, name, email, avatar, wins, losses, total_score, created_at } = req.user;
+    const rank = db.getUserRank(id);
+    res.json({ id, name, email, avatar, wins, losses, total_score, created_at, rank });
+});
+
+// API — match history
+app.get('/api/me/history', (req, res) => {
+    if (!req.isAuthenticated()) return res.status(401).json({ error: 'Not logged in' });
+    const history = db.getMatchHistory(req.user.id, 10);
+    res.json(history);
+});
+
+// API — leaderboard (all players)
+app.get('/api/leaderboard', (req, res) => {
+    const all = db.getLeaderboard(); // no limit = all users
+    res.json(all);
+});
+
+// Leaderboard page (public)
+app.get('/leaderboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'leaderboard.html'));
+});
+
+// Profile page (PROTECTED)
+app.get('/profile', requireLogin, (req, res) => {
+    res.sendFile(path.join(__dirname, 'profile.html'));
+});
+
+// Lobby (PROTECTED)
+app.get('/lobby', requireLogin, (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Serve static files (CSS, JS, socket assets, etc.)
+// Static files (CSS, JS, socket assets)
 app.use(express.static(__dirname));
-
-// (requires moved to top)
 
 let questionsDB = {};
 let questionsCppDB = {};

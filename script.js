@@ -1,3 +1,37 @@
+// ---- FETCH USER SESSION ----
+let currentUser = null;
+
+async function loadUser() {
+    try {
+        const res = await fetch('/api/me');
+        if (!res.ok) { window.location.href = '/login'; return; }
+        currentUser = await res.json();
+
+        // Auto-fill name inputs
+        if (createNameInput) createNameInput.value = currentUser.name;
+        if (joinNameInput) joinNameInput.value = currentUser.name;
+
+        // Inject welcome bar into lobby header
+        const lobbyHeader = document.querySelector('.lobby-header');
+        if (lobbyHeader && !document.getElementById('user-bar')) {
+            const bar = document.createElement('div');
+            bar.id = 'user-bar';
+            bar.style.cssText = 'display:flex;align-items:center;gap:12px;margin-top:12px;justify-content:center;';
+            bar.innerHTML = `
+                ${currentUser.avatar
+                    ? `<img src="${currentUser.avatar}" style="width:32px;height:32px;border-radius:50%;border:2px solid var(--accent-green)" alt="avatar">`
+                    : ''}
+                <span style="font-size:0.85rem;color:var(--text-secondary)">Welcome, <strong style="color:var(--accent-green)">${currentUser.name}</strong></span>
+                <span style="font-size:0.75rem;color:var(--text-secondary)">| W: ${currentUser.wins} L: ${currentUser.losses}</span>
+                <a href="/auth/logout" style="margin-left:8px;font-size:0.72rem;color:var(--accent-red);text-decoration:none;border:1px solid var(--accent-red);padding:3px 10px;">LOGOUT</a>
+            `;
+            lobbyHeader.appendChild(bar);
+        }
+    } catch (e) {
+        console.warn('Could not load user session:', e);
+    }
+}
+
 // DOM Elements
 const views = {
     lobby: document.getElementById('lobby-view'),
@@ -417,5 +451,6 @@ if (submitBtn) submitBtn.addEventListener('click', () => evaluateCode(true));
 if (rematchBtn) rematchBtn.addEventListener('click', () => window.location.reload());
 
 // Init
-createNameInput.focus();
+loadUser();
+if (createNameInput) createNameInput.focus();
 updateLineNumbers();
