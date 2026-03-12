@@ -1,23 +1,27 @@
-FROM node:18-alpine
+FROM node:18-bullseye-slim
 
-# Install Python and G++ to support our code execution engine
-RUN apk add --no-cache python3 g++ make
+# Install build tools needed by better-sqlite3 (native C++ addon)
+# and execution engine tools (python3, g++, make, gcc for C compilation)
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    g++ \
+    gcc \
+    make \
+    build-essential \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -sf python3 /usr/bin/python
 
-# Map python3 to python so the server.js `child_process.exec('python ...')` works
-RUN ln -sf python3 /usr/bin/python
-
-# Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# Install dependencies (better-sqlite3 will compile from source)
 COPY package*.json ./
 RUN npm install
 
-# Bundle app source
+# Copy source files
 COPY . .
 
-# Expose port (Render sets PORT randomly, but exposes internally)
 EXPOSE 3000
 
-# Start server
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
